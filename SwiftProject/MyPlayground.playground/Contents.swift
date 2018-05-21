@@ -203,7 +203,7 @@ if assumdStr != nil {
 }
 
 
-let age = -3
+let age = 3
 //使用断言调试
 assert(age >= 0,"age 不能小于0")
 
