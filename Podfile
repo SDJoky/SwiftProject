@@ -7,14 +7,10 @@ target 'SwiftProject' do
 
   # Pods for SwiftProject
   pod 'Tiercel'
-  target 'SwiftProjectTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'SwiftProjectUITests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
+  pod 'Alamofire'
+  pod 'SwiftyJSON'
+  pod 'HandyJSON', '~> 4.1.1'
+  pod 'SVProgressHUD'
+  pod 'SVProgressHUD'
+  
 end

@@ -18,42 +18,85 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cxj-tp-Yum">
-                                <rect key="frame" x="152" y="120" width="71" height="30"/>
-                                <state key="normal" title="downLoad"/>
-                                <connections>
-                                    <action selector="downLoadAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Z4x-Kc-sVh"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rew-HX-eNJ">
-                                <rect key="frame" x="172" y="160" width="31" height="30"/>
+                                <rect key="frame" x="186" y="627" width="31" height="30"/>
                                 <state key="normal" title="暂停"/>
                                 <connections>
                                     <action selector="suspendAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zWs-xx-QHz"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DYR-Rk-y5s">
-                                <rect key="frame" x="156" y="200" width="62" height="30"/>
+                                <rect key="frame" x="227" y="627" width="62" height="30"/>
                                 <state key="normal" title="继续下载"/>
                                 <connections>
                                     <action selector="restartAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2im-wt-Xk6"/>
                                 </connections>
                             </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="eqS-PK-S8O">
+                                <rect key="frame" x="0.0" y="71" width="375" height="515.5"/>
+                                <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <collectionViewLayout key="collectionViewLayout" id="AVJ-nV-kKV"/>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="SPH-pX-vF3" customClass="CollectionViewCell" customModule="SwiftProject" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="hSG-t5-Pvb"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="I7B-Ii-J2V"/>
+                                </connections>
+                            </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="关于网络请求和model" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XdI-8N-aln">
+                                <rect key="frame" x="103" y="40" width="169" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cxj-tp-Yum">
+                                <rect key="frame" x="186" y="592" width="62" height="30"/>
+                                <state key="normal" title="开始下载"/>
+                                <connections>
+                                    <action selector="downLoadAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Z4x-Kc-sVh"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="下载之Tiercel使用：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ct-0x-6X7">
+                                <rect key="frame" x="20" y="596.5" width="156" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.85098039219999999" green="0.16862745100000001" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="cxj-tp-Yum" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="0E6-eW-51e"/>
-                            <constraint firstItem="cxj-tp-Yum" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="26Y-M3-i4H"/>
-                            <constraint firstItem="DYR-Rk-y5s" firstAttribute="top" secondItem="rew-HX-eNJ" secondAttribute="bottom" constant="10" id="2AL-7V-ocF"/>
-                            <constraint firstItem="rew-HX-eNJ" firstAttribute="top" secondItem="cxj-tp-Yum" secondAttribute="bottom" constant="10" id="401-rZ-U8G"/>
-                            <constraint firstItem="rew-HX-eNJ" firstAttribute="centerX" secondItem="cxj-tp-Yum" secondAttribute="centerX" id="808-We-ZBp"/>
-                            <constraint firstItem="DYR-Rk-y5s" firstAttribute="centerX" secondItem="rew-HX-eNJ" secondAttribute="centerX" id="ynj-09-hBf"/>
+                            <constraint firstItem="eqS-PK-S8O" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="4ew-OP-CwN"/>
+                            <constraint firstItem="eqS-PK-S8O" firstAttribute="top" secondItem="XdI-8N-aln" secondAttribute="bottom" constant="10" id="Bye-yy-okp"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="rew-HX-eNJ" secondAttribute="bottom" constant="10" id="D3h-dX-bgd"/>
+                            <constraint firstItem="8Ct-0x-6X7" firstAttribute="centerY" secondItem="cxj-tp-Yum" secondAttribute="centerY" id="Q5C-ZZ-hCo"/>
+                            <constraint firstItem="rew-HX-eNJ" firstAttribute="leading" secondItem="cxj-tp-Yum" secondAttribute="leading" id="REg-EX-S5i"/>
+                            <constraint firstItem="8Ct-0x-6X7" firstAttribute="top" secondItem="eqS-PK-S8O" secondAttribute="bottom" constant="10" id="Soa-0q-PlS"/>
+                            <constraint firstItem="XdI-8N-aln" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="VcY-8i-Bkv"/>
+                            <constraint firstItem="XdI-8N-aln" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="YcF-Ob-K6z"/>
+                            <constraint firstItem="DYR-Rk-y5s" firstAttribute="leading" secondItem="rew-HX-eNJ" secondAttribute="trailing" constant="10" id="cm0-fa-GE1"/>
+                            <constraint firstItem="8Ct-0x-6X7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="eO8-ZS-F2C"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eqS-PK-S8O" secondAttribute="trailing" id="faA-aT-cJz"/>
+                            <constraint firstItem="DYR-Rk-y5s" firstAttribute="top" secondItem="rew-HX-eNJ" secondAttribute="top" id="sMS-ol-OcX"/>
+                            <constraint firstItem="DYR-Rk-y5s" firstAttribute="top" secondItem="cxj-tp-Yum" secondAttribute="bottom" constant="5" id="vp2-zm-Duw"/>
+                            <constraint firstItem="cxj-tp-Yum" firstAttribute="leading" secondItem="8Ct-0x-6X7" secondAttribute="trailing" constant="10" id="znI-DE-Ep4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="myCollectionView" destination="eqS-PK-S8O" id="LSR-mz-lUO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-535.20000000000005" y="-43.628185907046479"/>
         </scene>
     </scenes>
 </document>
