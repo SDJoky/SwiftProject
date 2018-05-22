@@ -56,5 +56,10 @@ class ViewController: UIViewController {
         downloadManager.suspend(urlStr)
     }
     
+    // 由于Tiercel是使用URLSession实现的，session需要手动销毁，所以当不再需要使用Tiercel也需要手动销毁
+    deinit {
+        downloadManager.invalidate()
+    }
+    
 }
 
