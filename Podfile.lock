@@ -1,0 +1,16 @@
+PODS:
+  - Tiercel (1.1.0)
+
+DEPENDENCIES:
+  - Tiercel
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Tiercel
+
+SPEC CHECKSUMS:
+  Tiercel: 7d50adada8c9383beb40be0f7a91f8da9fe9c80c
+
+PODFILE CHECKSUM: e5985e1e352b90ee8de06655dc767d420bab75bd
+
+COCOAPODS: 1.5.0
