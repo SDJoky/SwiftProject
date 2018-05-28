@@ -9,6 +9,8 @@
 import UIKit
 import Tiercel
 import SnapKit
+import SVProgressHUD
+import Kingfisher
 
 class Test2ViewController: UIViewController {
     
@@ -63,6 +65,38 @@ class Test2ViewController: UIViewController {
             make.left.equalTo(tipLbl)
         }
         
+        //KingfisherManager 设置超时时间
+        KingfisherManager.shared.downloader.downloadTimeout = 5
+        //缓存
+        let cache = KingfisherManager.shared.cache
+        // 设置硬盘最大缓存50M ，默认无限
+        cache.maxDiskCacheSize = 50 * 1024 * 1024
+        // 设置硬盘最大保存3天 ， 默认1周
+        cache.maxCachePeriodInSecond = 60 * 60 * 24 * 3
+        // 获取硬盘缓存的大小
+        cache.calculateDiskCacheSize { (size) -> () in
+            NSLog("disk size in bytes: \(size)")
+        }
+        
+        /*------------------Kingfisher使用-------------------------------*/
+        let kingImg = UIImageView()
+        self.view.addSubview(kingImg)
+        //默认情况下Kingfisher使用url当做cache(缓存)的key
+        //Kingfisher 默认先从内存和硬盘搜 ，如果没找到才去URL down
+        kingImg.kf.setImage(with: URL(string:"http://www.08lr.cn/uploads/allimg/170513/1-1F513100951.jpg"), placeholder: UIImage(named: "BannerDefault"), options: nil, progressBlock: { (receivedSize, totalSize) in
+            let progress = Float(receivedSize) / Float(totalSize)
+            SVProgressHUD.showProgress(progress)
+        }) { (image, error, cacheType, url) in
+            SVProgressHUD.dismiss()
+        }
+        
+        kingImg.snp.remakeConstraints { (make) in
+            make.width.equalTo(300)
+            make.height.equalTo(200)
+            make.top.equalTo(restartBtn.snp.bottom).offset(15)
+            make.centerX.equalTo(self.view)
+        }
+        
     }
     
     func creatBtn(title:String,titleColor:UIColor,backGroundColor:UIColor) -> UIButton {
@@ -109,6 +143,16 @@ class Test2ViewController: UIViewController {
     // 由于Tiercel是使用URLSession实现的，session需要手动销毁，所以当不再需要使用Tiercel也需要手动销毁
     deinit {
         downloadManager.invalidate()
+        
+        let cache = KingfisherManager.shared.cache
+        //清理内存缓存
+        cache.clearMemoryCache()
+        
+        // 清理硬盘缓存，这是一个异步的操作
+        cache.clearDiskCache()
+        
+        // 清理过期或大小超过磁盘限制缓存。这是一个异步的操作
+        cache.cleanExpiredDiskCache()
     }
 
 }

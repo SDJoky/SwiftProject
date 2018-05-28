@@ -8,6 +8,7 @@ target 'SwiftProject' do
   # Pods for SwiftProject
   pod 'Tiercel'
   pod 'Alamofire'
+  pod 'Kingfisher'
   pod 'SwiftyJSON'
   pod 'HandyJSON', '~> 4.1.1'
   pod 'SVProgressHUD'
