@@ -12,5 +12,6 @@ target 'SwiftProject' do
   pod 'HandyJSON', '~> 4.1.1'
   pod 'SVProgressHUD'
   pod 'SVProgressHUD'
-  
+  pod 'MJRefresh'
+  pod 'SnapKit'
 end
