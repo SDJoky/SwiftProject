@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		378641219A237EEC20F5861D /* Pods_SwiftProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3CD2E3821B4BF3496B5D2B7 /* Pods_SwiftProject.framework */; };
+		455E9776214A477900D59AB5 /* Test1DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455E9775214A477900D59AB5 /* Test1DetailViewController.swift */; };
+		455E9782214A4E1600D59AB5 /* SDPushAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455E9781214A4E1600D59AB5 /* SDPushAnimationController.swift */; };
 		CB1B344620BBD3960039FD9E /* MyTabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1B344520BBD3960039FD9E /* MyTabbarViewController.swift */; };
 		CB1B344820BBD5F70039FD9E /* Test1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1B344720BBD5F70039FD9E /* Test1ViewController.swift */; };
 		CB1B344A20BBDBF60039FD9E /* Test2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1B344920BBDBF60039FD9E /* Test2ViewController.swift */; };
@@ -42,6 +44,8 @@
 /* Begin PBXFileReference section */
 		10763A4A97AAE8CCC88C02AE /* Pods_SwiftProjectUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftProjectUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F84D1437F2CB2427CB2F05F /* Pods-SwiftProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftProject/Pods-SwiftProject.release.xcconfig"; sourceTree = "<group>"; };
+		455E9775214A477900D59AB5 /* Test1DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test1DetailViewController.swift; sourceTree = "<group>"; };
+		455E9781214A4E1600D59AB5 /* SDPushAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDPushAnimationController.swift; sourceTree = "<group>"; };
 		60F4D4A42C6E93A78897220E /* Pods_SwiftProjectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftProjectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5C2103A3291AD4479E12E6E /* Pods-SwiftProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftProject/Pods-SwiftProject.debug.xcconfig"; sourceTree = "<group>"; };
 		CB1B344520BBD3960039FD9E /* MyTabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTabbarViewController.swift; sourceTree = "<group>"; };
@@ -140,6 +144,7 @@
 				CB1F4D40208F058400B7AC80 /* AppDelegate.swift */,
 				CB1B344520BBD3960039FD9E /* MyTabbarViewController.swift */,
 				CB1B344720BBD5F70039FD9E /* Test1ViewController.swift */,
+				455E9775214A477900D59AB5 /* Test1DetailViewController.swift */,
 				CB1B344920BBDBF60039FD9E /* Test2ViewController.swift */,
 				CBD5F28A20B3EB7C00DFD55D /* HomeNewsModel.swift */,
 				CB1F4D44208F058400B7AC80 /* Main.storyboard */,
@@ -148,6 +153,7 @@
 				CB1F4D4C208F058700B7AC80 /* Info.plist */,
 				CBD5F28C20B3F0D000DFD55D /* CollectionViewCell.swift */,
 				CBD5F28D20B3F0D000DFD55D /* CollectionViewCell.xib */,
+				455E9781214A4E1600D59AB5 /* SDPushAnimationController.swift */,
 			);
 			path = SwiftProject;
 			sourceTree = "<group>";
@@ -362,7 +368,9 @@
 				CB1B344620BBD3960039FD9E /* MyTabbarViewController.swift in Sources */,
 				CB1F4D41208F058400B7AC80 /* AppDelegate.swift in Sources */,
 				CBD5F28E20B3F0D000DFD55D /* CollectionViewCell.swift in Sources */,
+				455E9782214A4E1600D59AB5 /* SDPushAnimationController.swift in Sources */,
 				CBD5F28B20B3EB7C00DFD55D /* HomeNewsModel.swift in Sources */,
+				455E9776214A477900D59AB5 /* Test1DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -538,7 +546,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SwiftProject/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = szy.SwiftProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -553,7 +564,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SwiftProject/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = szy.SwiftProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -568,7 +582,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SwiftProjectTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = szy.SwiftProjectTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -584,7 +602,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SwiftProjectTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = szy.SwiftProjectTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -599,7 +621,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SwiftProjectUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = szy.SwiftProjectUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -614,7 +640,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SwiftProjectUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = szy.SwiftProjectUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

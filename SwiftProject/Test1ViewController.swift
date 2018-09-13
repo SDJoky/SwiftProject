@@ -12,10 +12,10 @@ import SwiftyJSON
 import SVProgressHUD
 import MJRefresh
 
-class Test1ViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UICollectionViewDelegate {
-    
+class Test1ViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UICollectionViewDelegate{
     var dataArr = [HomeNewsModel]()
     private var myCollectionView: UICollectionView!
+    let pushAnim = SDPushAnimationController()
     
     let flowLayout = UICollectionViewFlowLayout()
     let device_id: Int = 6096495334
@@ -26,7 +26,6 @@ class Test1ViewController: UIViewController,UICollectionViewDataSource,UICollect
         flowLayout.itemSize = CGSize.init(width: 105, height: 70)
         flowLayout.scrollDirection = UICollectionViewScrollDirection.vertical
         flowLayout.sectionInset = UIEdgeInsetsMake(0, 5, 0, 5)
-        
         self.myCollectionView = UICollectionView(frame: CGRect.init(x: 0, y: 15, width: self.view.frame.size.width, height: self.view.frame.height - 49 - 15), collectionViewLayout: flowLayout)
         self.myCollectionView.backgroundColor = UIColor.white
         self.myCollectionView.register(UINib.init(nibName:"CollectionViewCell" , bundle: Bundle.main), forCellWithReuseIdentifier: "CollectionViewCell")
@@ -42,7 +41,7 @@ class Test1ViewController: UIViewController,UICollectionViewDataSource,UICollect
         self.myCollectionView.mj_header = header
         self.myCollectionView.mj_header .beginRefreshing()
     }
-    
+
     private func loadRequest() {
         let url = "https://is.snssdk.com/article/category/get_subscribed/v1/?"
         let params = ["device_id": device_id,"iid":iid]
@@ -84,7 +83,16 @@ class Test1ViewController: UIViewController,UICollectionViewDataSource,UICollect
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        SVProgressHUD.showInfo(withStatus: "\(dataArr[indexPath.item].name)")
+        let detailVC = Test1DetailViewController()
+        if indexPath.row % 2 == 0 {
+            self.navigationController?.delegate = pushAnim;
+            self.navigationController?.pushViewController(detailVC, animated: true)
+        }else
+        {
+            detailVC.transitioningDelegate = pushAnim;
+            present(detailVC, animated: true, completion: nil)
+        }
+        
     }
 }
 
