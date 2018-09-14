@@ -15,7 +15,7 @@ import MJRefresh
 class Test1ViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UICollectionViewDelegate{
     var dataArr = [HomeNewsModel]()
     private var myCollectionView: UICollectionView!
-    let pushAnim = SDPushAnimationController()
+    let pushAnim = SDPushAnimation()
     
     let flowLayout = UICollectionViewFlowLayout()
     let device_id: Int = 6096495334

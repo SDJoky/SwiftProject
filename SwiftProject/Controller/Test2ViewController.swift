@@ -96,7 +96,6 @@ class Test2ViewController: UIViewController {
             make.top.equalTo(restartBtn.snp.bottom).offset(15)
             make.centerX.equalTo(self.view)
         }
-        
     }
     
     func creatBtn(title:String,titleColor:UIColor,backGroundColor:UIColor) -> UIButton {

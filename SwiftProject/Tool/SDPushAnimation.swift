@@ -8,13 +8,13 @@
 
 import UIKit
 
-class SDPushAnimationController: NSObject{
+class SDPushAnimation: NSObject{
     
     var transitionContext : UIViewControllerContextTransitioning?
 
 }
 
-extension SDPushAnimationController : UIViewControllerAnimatedTransitioning {
+extension SDPushAnimation : UIViewControllerAnimatedTransitioning {
     func transitionDuration(using transitionContext : UIViewControllerContextTransitioning?) -> TimeInterval {
         return 2
     }
@@ -43,7 +43,7 @@ extension SDPushAnimationController : UIViewControllerAnimatedTransitioning {
 
 
 //present
-extension SDPushAnimationController: UIViewControllerTransitioningDelegate {
+extension SDPushAnimation: UIViewControllerTransitioningDelegate {
 //    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
 //        return self
 //    }
@@ -54,7 +54,7 @@ extension SDPushAnimationController: UIViewControllerTransitioningDelegate {
 }
 
 //push pop
-extension SDPushAnimationController : UINavigationControllerDelegate{
+extension SDPushAnimation : UINavigationControllerDelegate{
     func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         
         return self
