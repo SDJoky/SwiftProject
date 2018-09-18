@@ -22,6 +22,12 @@ class SDBaseTableView: UITableView {
         }
         self.dataSource = self
         self.delegate = self
+        self.tableFooterView = UIView.init()
+        self.createHeader()
+        self.createFooter()
+        let nib = UINib(nibName: "TestTableViewCell", bundle: nil) //nibName指的是我们创建的Cell文件名
+        self.register(nib, forCellReuseIdentifier: "TestTableViewCell")
+
     }
     
     init() {
@@ -34,7 +40,7 @@ class SDBaseTableView: UITableView {
     
     func createHeader() {
         // 下拉刷新
-        let header = MJRefreshGifHeader {
+        let header = MJRefreshNormalHeader {
             
         }
         header?.isAutomaticallyChangeAlpha = true
@@ -55,11 +61,12 @@ class SDBaseTableView: UITableView {
 
 extension SDBaseTableView : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell.init()
+        let cell : TestTableViewCell! = tableView .dequeueReusableCell(withIdentifier: "TestTableViewCell") as?TestTableViewCell
+        return cell
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

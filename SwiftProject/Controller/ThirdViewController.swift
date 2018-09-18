@@ -9,28 +9,19 @@
 import UIKit
 
 class ThirdViewController: UIViewController {
-
+    
+    lazy var table : SDBaseTableView = { [weak self] in
+        let theV = SDBaseTableView.init(frame: (self?.view.bounds)!, style: UITableViewStyle.plain)
+        theV.frame = (self?.view.bounds)!;
+        return theV;
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        let table : SDBaseTableView = SDBaseTableView.init(frame: self.view.frame, style: UITableViewStyle.plain)
-        table.
         self.view.addSubview(table)
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        table.reloadData()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
 
 }
