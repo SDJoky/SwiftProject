@@ -10,7 +10,7 @@ target 'SwiftProject' do
   pod 'Alamofire'
   pod 'Kingfisher'
   pod 'SwiftyJSON'
-  pod 'HandyJSON', '~> 4.1.1'
+  pod 'HandyJSON'
   pod 'SVProgressHUD'
   pod 'SVProgressHUD'
   pod 'MJRefresh'
