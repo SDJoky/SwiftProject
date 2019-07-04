@@ -15,4 +15,14 @@ target 'SwiftProject' do
   pod 'SVProgressHUD'
   pod 'MJRefresh'
   pod 'SnapKit'
+  
+  pod 'RxSwift'
+  pod 'RxCocoa'
+  pod 'NSObject+Rx'
+  pod 'Moya/RxSwift'
+  pod 'ObjectMapper'
+  pod 'RxDataSources'
+  pod 'Then'
+  pod 'Kingfisher'
+  pod 'Reusable'
 end
