@@ -10,6 +10,9 @@ import UIKit
 
 class TestTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var nameLbl: UILabel!
+    @IBOutlet weak var photoImgV: UIImageView!
+    @IBOutlet weak var desLbl: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -20,4 +23,11 @@ class TestTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+}
+
+
+extension TestTableViewCell {
+    static func cellHeigh() -> CGFloat {
+        return 180
+    }
 }

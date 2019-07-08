@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		378641219A237EEC20F5861D /* Pods_SwiftProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3CD2E3821B4BF3496B5D2B7 /* Pods_SwiftProject.framework */; };
+		4537D7FD22D3105200632DCB /* TableVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4537D7FC22D3105200632DCB /* TableVM.swift */; };
+		4537D80022D3108900632DCB /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4537D7FF22D3108900632DCB /* DataModel.swift */; };
+		4537D80322D3120B00632DCB /* VMProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4537D80222D3120B00632DCB /* VMProtocol.swift */; };
+		4537D80822D314E200632DCB /* LXFNetworkTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4537D80622D314E200632DCB /* LXFNetworkTool.swift */; };
+		4537D80B22D322D300632DCB /* Response+ObjectMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4537D80A22D322D300632DCB /* Response+ObjectMapper.swift */; };
 		4539AE56214B8C8A005CC654 /* SDBaseTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4539AE55214B8C8A005CC654 /* SDBaseTableView.swift */; };
 		455E9776214A477900D59AB5 /* Test1DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455E9775214A477900D59AB5 /* Test1DetailViewController.swift */; };
 		455E9782214A4E1600D59AB5 /* SDPushAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455E9781214A4E1600D59AB5 /* SDPushAnimation.swift */; };
@@ -48,6 +53,11 @@
 /* Begin PBXFileReference section */
 		10763A4A97AAE8CCC88C02AE /* Pods_SwiftProjectUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftProjectUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F84D1437F2CB2427CB2F05F /* Pods-SwiftProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftProject/Pods-SwiftProject.release.xcconfig"; sourceTree = "<group>"; };
+		4537D7FC22D3105200632DCB /* TableVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableVM.swift; sourceTree = "<group>"; };
+		4537D7FF22D3108900632DCB /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		4537D80222D3120B00632DCB /* VMProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VMProtocol.swift; sourceTree = "<group>"; };
+		4537D80622D314E200632DCB /* LXFNetworkTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LXFNetworkTool.swift; sourceTree = "<group>"; };
+		4537D80A22D322D300632DCB /* Response+ObjectMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Response+ObjectMapper.swift"; sourceTree = "<group>"; };
 		4539AE55214B8C8A005CC654 /* SDBaseTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDBaseTableView.swift; sourceTree = "<group>"; };
 		455E9775214A477900D59AB5 /* Test1DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test1DetailViewController.swift; sourceTree = "<group>"; };
 		455E9781214A4E1600D59AB5 /* SDPushAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDPushAnimation.swift; sourceTree = "<group>"; };
@@ -104,6 +114,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4537D7F922D3101F00632DCB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4537D7FC22D3105200632DCB /* TableVM.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		4537D7FE22D3107800632DCB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4537D7FF22D3108900632DCB /* DataModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4537D80122D311EE00632DCB /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				4537D80222D3120B00632DCB /* VMProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		4537D80422D314E200632DCB /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				4537D80622D314E200632DCB /* LXFNetworkTool.swift */,
+			);
+			name = Tool;
+			path = ../../GithubStudy/RxDemo/RxSwiftDemo/RxSwiftDemo/Classes/Tool;
+			sourceTree = "<group>";
+		};
+		4537D80922D322D300632DCB /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				4537D80A22D322D300632DCB /* Response+ObjectMapper.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		45C3C1FB214BABE900AC5A82 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -178,6 +229,11 @@
 		CB1F4D3F208F058400B7AC80 /* SwiftProject */ = {
 			isa = PBXGroup;
 			children = (
+				4537D80922D322D300632DCB /* Extension */,
+				4537D80422D314E200632DCB /* Tool */,
+				4537D80122D311EE00632DCB /* Protocol */,
+				4537D7FE22D3107800632DCB /* Model */,
+				4537D7F922D3101F00632DCB /* ViewModel */,
 				45C3C1FD214BB04600AC5A82 /* Tool */,
 				45C3C1FC214BB03900AC5A82 /* View */,
 				CBD3163620B2CF88000D793B /* MyPlayground.playground */,
@@ -369,23 +425,45 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SwiftProject/Pods-SwiftProject-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
 				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/NSObject+Rx/NSObject_Rx.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/Reusable/Reusable.framework",
+				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/Then/Then.framework",
 				"${BUILT_PRODUCTS_DIR}/Tiercel/Tiercel.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NSObject_Rx.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reusable.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Then.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Tiercel.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -400,11 +478,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4537D80322D3120B00632DCB /* VMProtocol.swift in Sources */,
+				4537D80822D314E200632DCB /* LXFNetworkTool.swift in Sources */,
 				4539AE56214B8C8A005CC654 /* SDBaseTableView.swift in Sources */,
 				CB1B344820BBD5F70039FD9E /* Test1ViewController.swift in Sources */,
 				45C3C1FA214BAA6D00AC5A82 /* ThirdViewController.swift in Sources */,
+				4537D7FD22D3105200632DCB /* TableVM.swift in Sources */,
 				CB1B344A20BBDBF60039FD9E /* Test2ViewController.swift in Sources */,
+				4537D80B22D322D300632DCB /* Response+ObjectMapper.swift in Sources */,
 				CB1B344620BBD3960039FD9E /* MyTabbarViewController.swift in Sources */,
+				4537D80022D3108900632DCB /* DataModel.swift in Sources */,
 				CB1F4D41208F058400B7AC80 /* AppDelegate.swift in Sources */,
 				CBD5F28E20B3F0D000DFD55D /* CollectionViewCell.swift in Sources */,
 				455E9782214A4E1600D59AB5 /* SDPushAnimation.swift in Sources */,
