@@ -11,11 +11,14 @@
 		4537D7FD22D3105200632DCB /* TableVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4537D7FC22D3105200632DCB /* TableVM.swift */; };
 		4537D80022D3108900632DCB /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4537D7FF22D3108900632DCB /* DataModel.swift */; };
 		4537D80322D3120B00632DCB /* VMProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4537D80222D3120B00632DCB /* VMProtocol.swift */; };
-		4537D80822D314E200632DCB /* LXFNetworkTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4537D80622D314E200632DCB /* LXFNetworkTool.swift */; };
 		4537D80B22D322D300632DCB /* Response+ObjectMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4537D80A22D322D300632DCB /* Response+ObjectMapper.swift */; };
 		4539AE56214B8C8A005CC654 /* SDBaseTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4539AE55214B8C8A005CC654 /* SDBaseTableView.swift */; };
 		455E9776214A477900D59AB5 /* Test1DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455E9775214A477900D59AB5 /* Test1DetailViewController.swift */; };
 		455E9782214A4E1600D59AB5 /* SDPushAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455E9781214A4E1600D59AB5 /* SDPushAnimation.swift */; };
+		45A0086222D5D19D003A1F54 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A0085F22D5D19D003A1F54 /* ApiManager.swift */; };
+		45A0086322D5D19D003A1F54 /* ToModelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A0086022D5D19D003A1F54 /* ToModelExtension.swift */; };
+		45A0086422D5D19D003A1F54 /* ToolExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A0086122D5D19D003A1F54 /* ToolExtension.swift */; };
+		45A0086622D5D2D3003A1F54 /* ThirdNetTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A0086522D5D2D3003A1F54 /* ThirdNetTool.swift */; };
 		45C3C1FA214BAA6D00AC5A82 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C3C1F9214BAA6D00AC5A82 /* ThirdViewController.swift */; };
 		45C3C200214BB06100AC5A82 /* TestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C3C1FE214BB06100AC5A82 /* TestTableViewCell.swift */; };
 		45C3C201214BB06100AC5A82 /* TestTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45C3C1FF214BB06100AC5A82 /* TestTableViewCell.xib */; };
@@ -56,11 +59,14 @@
 		4537D7FC22D3105200632DCB /* TableVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableVM.swift; sourceTree = "<group>"; };
 		4537D7FF22D3108900632DCB /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		4537D80222D3120B00632DCB /* VMProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VMProtocol.swift; sourceTree = "<group>"; };
-		4537D80622D314E200632DCB /* LXFNetworkTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LXFNetworkTool.swift; sourceTree = "<group>"; };
 		4537D80A22D322D300632DCB /* Response+ObjectMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Response+ObjectMapper.swift"; sourceTree = "<group>"; };
 		4539AE55214B8C8A005CC654 /* SDBaseTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDBaseTableView.swift; sourceTree = "<group>"; };
 		455E9775214A477900D59AB5 /* Test1DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test1DetailViewController.swift; sourceTree = "<group>"; };
 		455E9781214A4E1600D59AB5 /* SDPushAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDPushAnimation.swift; sourceTree = "<group>"; };
+		45A0085F22D5D19D003A1F54 /* ApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
+		45A0086022D5D19D003A1F54 /* ToModelExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToModelExtension.swift; sourceTree = "<group>"; };
+		45A0086122D5D19D003A1F54 /* ToolExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolExtension.swift; sourceTree = "<group>"; };
+		45A0086522D5D2D3003A1F54 /* ThirdNetTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdNetTool.swift; sourceTree = "<group>"; };
 		45C3C1F9214BAA6D00AC5A82 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		45C3C1FE214BB06100AC5A82 /* TestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTableViewCell.swift; sourceTree = "<group>"; };
 		45C3C1FF214BB06100AC5A82 /* TestTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestTableViewCell.xib; sourceTree = "<group>"; };
@@ -138,15 +144,6 @@
 			path = Protocol;
 			sourceTree = "<group>";
 		};
-		4537D80422D314E200632DCB /* Tool */ = {
-			isa = PBXGroup;
-			children = (
-				4537D80622D314E200632DCB /* LXFNetworkTool.swift */,
-			);
-			name = Tool;
-			path = ../../GithubStudy/RxDemo/RxSwiftDemo/RxSwiftDemo/Classes/Tool;
-			sourceTree = "<group>";
-		};
 		4537D80922D322D300632DCB /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -180,7 +177,11 @@
 		45C3C1FD214BB04600AC5A82 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				45A0085F22D5D19D003A1F54 /* ApiManager.swift */,
+				45A0086022D5D19D003A1F54 /* ToModelExtension.swift */,
+				45A0086122D5D19D003A1F54 /* ToolExtension.swift */,
 				455E9781214A4E1600D59AB5 /* SDPushAnimation.swift */,
+				45A0086522D5D2D3003A1F54 /* ThirdNetTool.swift */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -230,7 +231,6 @@
 			isa = PBXGroup;
 			children = (
 				4537D80922D322D300632DCB /* Extension */,
-				4537D80422D314E200632DCB /* Tool */,
 				4537D80122D311EE00632DCB /* Protocol */,
 				4537D7FE22D3107800632DCB /* Model */,
 				4537D7F922D3101F00632DCB /* ViewModel */,
@@ -478,8 +478,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45A0086222D5D19D003A1F54 /* ApiManager.swift in Sources */,
 				4537D80322D3120B00632DCB /* VMProtocol.swift in Sources */,
-				4537D80822D314E200632DCB /* LXFNetworkTool.swift in Sources */,
+				45A0086322D5D19D003A1F54 /* ToModelExtension.swift in Sources */,
+				45A0086422D5D19D003A1F54 /* ToolExtension.swift in Sources */,
 				4539AE56214B8C8A005CC654 /* SDBaseTableView.swift in Sources */,
 				CB1B344820BBD5F70039FD9E /* Test1ViewController.swift in Sources */,
 				45C3C1FA214BAA6D00AC5A82 /* ThirdViewController.swift in Sources */,
@@ -487,6 +489,7 @@
 				CB1B344A20BBDBF60039FD9E /* Test2ViewController.swift in Sources */,
 				4537D80B22D322D300632DCB /* Response+ObjectMapper.swift in Sources */,
 				CB1B344620BBD3960039FD9E /* MyTabbarViewController.swift in Sources */,
+				45A0086622D5D2D3003A1F54 /* ThirdNetTool.swift in Sources */,
 				4537D80022D3108900632DCB /* DataModel.swift in Sources */,
 				CB1F4D41208F058400B7AC80 /* AppDelegate.swift in Sources */,
 				CBD5F28E20B3F0D000DFD55D /* CollectionViewCell.swift in Sources */,

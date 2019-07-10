@@ -34,8 +34,8 @@ extension TableVM : VMProtocol {
     typealias Output = DataOutput
     
     struct DataInput {
-        let category : LXFNetworkTool.LXFNetworkCategory
-        init(category : LXFNetworkTool.LXFNetworkCategory) {
+        let category : ThirdNetTool.LXFNetworkCategory
+        init(category : ThirdNetTool.LXFNetworkCategory) {
             self.category = category
         }
         
