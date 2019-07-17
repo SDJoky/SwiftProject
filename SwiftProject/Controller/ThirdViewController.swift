@@ -16,7 +16,7 @@ import SnapKit
 import Moya
 import Kingfisher
 import MJRefresh
-
+import SVProgressHUD
 class ThirdViewController: UIViewController {
     let ob = Observable<Any>.create { (observer) -> Disposable in
         return Disposables.create()
@@ -43,6 +43,18 @@ class ThirdViewController: UIViewController {
         // 加载数据
         tableView.mj_header.beginRefreshing()
     }
+    
+    private lazy var headerV : SDTestHeaderView = {
+        let headerV = SDTestHeaderView()
+        headerV.frame = CGRect(x: 0, y: 0, width: SCREENW, height: 100)
+        headerV.iconBtn.addTarget(self, action: #selector(iconClick), for: .touchUpInside)
+        return headerV
+    }()
+    
+    @objc func iconClick() {
+        print("点击 icon")
+        SVProgressHUD.showSuccess(withStatus: "点击icon")
+    }
 }
 
 extension ThirdViewController {
@@ -52,16 +64,15 @@ extension ThirdViewController {
         tableView.rowHeight = TestTableViewCell.cellHeigh()
         tableView.snp.makeConstraints { (make) in
             make.left.right.bottom.equalTo(view)
-            make.top.equalTo(view.snp.top).offset(20);
+            make.top.equalTo(view.snp.top).offset(0);
         }
+        tableView.tableHeaderView = headerV
     }
     
     fileprivate func bindView() {
         
         // 设置代理
         tableView.rx.setDelegate(self).disposed(by: rx.disposeBag)
-        
-        
         let vmInput = TableVM.DataInput(category: .welfare)
         let vmOutput = viewModel.transform(input: vmInput)
         
@@ -91,10 +102,15 @@ extension ThirdViewController {
             vmOutput.requestCommand.onNext(false)
         })
     }
+    
 }
 
 extension ThirdViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 120
     }
 }

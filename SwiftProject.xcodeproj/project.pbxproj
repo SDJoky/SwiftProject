@@ -15,6 +15,8 @@
 		4539AE56214B8C8A005CC654 /* SDBaseTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4539AE55214B8C8A005CC654 /* SDBaseTableView.swift */; };
 		455E9776214A477900D59AB5 /* Test1DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455E9775214A477900D59AB5 /* Test1DetailViewController.swift */; };
 		455E9782214A4E1600D59AB5 /* SDPushAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455E9781214A4E1600D59AB5 /* SDPushAnimation.swift */; };
+		458D31FD22DF135800122239 /* SDTestHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458D31FC22DF135800122239 /* SDTestHeaderView.swift */; };
+		458D31FF22DF166800122239 /* SDConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458D31FE22DF166800122239 /* SDConst.swift */; };
 		45A0086622D5D2D3003A1F54 /* ThirdNetTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A0086522D5D2D3003A1F54 /* ThirdNetTool.swift */; };
 		45C3C1FA214BAA6D00AC5A82 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C3C1F9214BAA6D00AC5A82 /* ThirdViewController.swift */; };
 		45C3C200214BB06100AC5A82 /* TestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C3C1FE214BB06100AC5A82 /* TestTableViewCell.swift */; };
@@ -60,6 +62,8 @@
 		4539AE55214B8C8A005CC654 /* SDBaseTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDBaseTableView.swift; sourceTree = "<group>"; };
 		455E9775214A477900D59AB5 /* Test1DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test1DetailViewController.swift; sourceTree = "<group>"; };
 		455E9781214A4E1600D59AB5 /* SDPushAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDPushAnimation.swift; sourceTree = "<group>"; };
+		458D31FC22DF135800122239 /* SDTestHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDTestHeaderView.swift; sourceTree = "<group>"; };
+		458D31FE22DF166800122239 /* SDConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDConst.swift; sourceTree = "<group>"; };
 		45A0086522D5D2D3003A1F54 /* ThirdNetTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdNetTool.swift; sourceTree = "<group>"; };
 		45C3C1F9214BAA6D00AC5A82 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		45C3C1FE214BB06100AC5A82 /* TestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTableViewCell.swift; sourceTree = "<group>"; };
@@ -164,6 +168,7 @@
 				4539AE55214B8C8A005CC654 /* SDBaseTableView.swift */,
 				45C3C1FE214BB06100AC5A82 /* TestTableViewCell.swift */,
 				45C3C1FF214BB06100AC5A82 /* TestTableViewCell.xib */,
+				458D31FC22DF135800122239 /* SDTestHeaderView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -173,6 +178,7 @@
 			children = (
 				455E9781214A4E1600D59AB5 /* SDPushAnimation.swift */,
 				45A0086522D5D2D3003A1F54 /* ThirdNetTool.swift */,
+				458D31FE22DF166800122239 /* SDConst.swift */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -476,12 +482,14 @@
 				4537D7FD22D3105200632DCB /* TableVM.swift in Sources */,
 				CB1B344A20BBDBF60039FD9E /* Test2ViewController.swift in Sources */,
 				4537D80B22D322D300632DCB /* Response+ObjectMapper.swift in Sources */,
+				458D31FD22DF135800122239 /* SDTestHeaderView.swift in Sources */,
 				CB1B344620BBD3960039FD9E /* MyTabbarViewController.swift in Sources */,
 				45A0086622D5D2D3003A1F54 /* ThirdNetTool.swift in Sources */,
 				4537D80022D3108900632DCB /* DataModel.swift in Sources */,
 				CB1F4D41208F058400B7AC80 /* AppDelegate.swift in Sources */,
 				CBD5F28E20B3F0D000DFD55D /* CollectionViewCell.swift in Sources */,
 				455E9782214A4E1600D59AB5 /* SDPushAnimation.swift in Sources */,
+				458D31FF22DF166800122239 /* SDConst.swift in Sources */,
 				CBD5F28B20B3EB7C00DFD55D /* HomeNewsModel.swift in Sources */,
 				455E9776214A477900D59AB5 /* Test1DetailViewController.swift in Sources */,
 				45C3C200214BB06100AC5A82 /* TestTableViewCell.swift in Sources */,
