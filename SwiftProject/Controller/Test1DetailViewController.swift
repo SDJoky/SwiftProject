@@ -9,17 +9,17 @@
 import UIKit
 
 class Test1DetailViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.blue
-        let btn :UIButton = creatBtn(title: "diss", titleColor: UIColor.red, backGroundColor: UIColor.yellow)
+        self.view.backgroundColor = .yellow
+        let btn : UIButton = creatBtn(title: "点击diss", titleColor: UIColor.red, backGroundColor: UIColor.yellow)
         btn.addTarget(self, action: #selector(disAction), for: .touchUpInside)
         self.view.addSubview(btn)
         btn.snp.remakeConstraints { (make) in
             make.centerX.equalTo(self.view)
             make.centerY.equalTo(self.view)
-            make.width.equalTo(50)
+            make.width.equalTo(100)
             make.height.equalTo(30)
         }
     }
@@ -39,7 +39,6 @@ class Test1DetailViewController: UIViewController {
         }else
         {
             self.dismiss(animated: true, completion: nil)
-
         }
     }
 

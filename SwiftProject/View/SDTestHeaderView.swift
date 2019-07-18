@@ -24,7 +24,7 @@ class SDTestHeaderView: UIView {
         addSubview(bgImageV)
         addSubview(messageBtn)
         addSubview(iconBtn)
-        
+        addSubview(nameLbl)
         bgImageV.snp.makeConstraints { (make) in
             make.left.bottom.right.equalTo(self)
             make.top.equalTo(0)
@@ -40,6 +40,11 @@ class SDTestHeaderView: UIView {
             make.centerX.equalTo(SCREENW * 0.5)
             make.size.equalTo(CGSize(width: 75, height: 75))
             make.centerY.equalTo(self)
+        }
+        
+        nameLbl.snp.makeConstraints { (make) in
+            make.centerX.equalTo(iconBtn)
+            make.top.equalTo(iconBtn.snp_bottom).offset(10)
         }
     }
     
@@ -62,5 +67,12 @@ class SDTestHeaderView: UIView {
         iconBtn.layer.cornerRadius = iconBtn.frame.size.width * 0.5
         iconBtn.layer.masksToBounds = true
         return iconBtn
+    }()
+    
+    lazy var nameLbl : UILabel = {
+        let nameLbl = UILabel()
+        nameLbl.text = "name"
+        nameLbl.textColor = UIColor.white
+        return nameLbl
     }()
 }

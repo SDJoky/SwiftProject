@@ -17,7 +17,17 @@ import Moya
 import Kingfisher
 import MJRefresh
 import SVProgressHUD
+
 class ThirdViewController: UIViewController {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.hidesBottomBarWhenPushed = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.hidesBottomBarWhenPushed = false
+    }
     let ob = Observable<Any>.create { (observer) -> Disposable in
         return Disposables.create()
     }
@@ -46,7 +56,7 @@ class ThirdViewController: UIViewController {
     
     private lazy var headerV : SDTestHeaderView = {
         let headerV = SDTestHeaderView()
-        headerV.frame = CGRect(x: 0, y: 0, width: SCREENW, height: 100)
+        headerV.frame = CGRect(x: 0, y: 0, width: SCREENW, height: 200)
         headerV.iconBtn.addTarget(self, action: #selector(iconClick), for: .touchUpInside)
         return headerV
     }()
@@ -108,9 +118,12 @@ extension ThirdViewController {
 extension ThirdViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        let detailVC = Test1DetailViewController()
+        self.navigationController?.pushViewController(detailVC, animated: true)
+        
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 120
+        return 200
     }
 }
