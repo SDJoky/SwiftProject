@@ -13,6 +13,7 @@
 		4537D80322D3120B00632DCB /* VMProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4537D80222D3120B00632DCB /* VMProtocol.swift */; };
 		4537D80B22D322D300632DCB /* Response+ObjectMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4537D80A22D322D300632DCB /* Response+ObjectMapper.swift */; };
 		4539AE56214B8C8A005CC654 /* SDBaseTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4539AE55214B8C8A005CC654 /* SDBaseTableView.swift */; };
+		45469EAF22F2A997000A94EA /* ThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45469EAE22F2A997000A94EA /* ThemeViewController.swift */; };
 		455E9776214A477900D59AB5 /* Test1DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455E9775214A477900D59AB5 /* Test1DetailViewController.swift */; };
 		455E9782214A4E1600D59AB5 /* SDPushAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455E9781214A4E1600D59AB5 /* SDPushAnimation.swift */; };
 		458D31FD22DF135800122239 /* SDTestHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458D31FC22DF135800122239 /* SDTestHeaderView.swift */; };
@@ -60,6 +61,7 @@
 		4537D80222D3120B00632DCB /* VMProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VMProtocol.swift; sourceTree = "<group>"; };
 		4537D80A22D322D300632DCB /* Response+ObjectMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Response+ObjectMapper.swift"; sourceTree = "<group>"; };
 		4539AE55214B8C8A005CC654 /* SDBaseTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDBaseTableView.swift; sourceTree = "<group>"; };
+		45469EAE22F2A997000A94EA /* ThemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeViewController.swift; sourceTree = "<group>"; };
 		455E9775214A477900D59AB5 /* Test1DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test1DetailViewController.swift; sourceTree = "<group>"; };
 		455E9781214A4E1600D59AB5 /* SDPushAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDPushAnimation.swift; sourceTree = "<group>"; };
 		458D31FC22DF135800122239 /* SDTestHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDTestHeaderView.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 				455E9775214A477900D59AB5 /* Test1DetailViewController.swift */,
 				CB1B344920BBDBF60039FD9E /* Test2ViewController.swift */,
 				45C3C1F9214BAA6D00AC5A82 /* ThirdViewController.swift */,
+				45469EAE22F2A997000A94EA /* ThemeViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -488,6 +491,7 @@
 				4537D80022D3108900632DCB /* DataModel.swift in Sources */,
 				CB1F4D41208F058400B7AC80 /* AppDelegate.swift in Sources */,
 				CBD5F28E20B3F0D000DFD55D /* CollectionViewCell.swift in Sources */,
+				45469EAF22F2A997000A94EA /* ThemeViewController.swift in Sources */,
 				455E9782214A4E1600D59AB5 /* SDPushAnimation.swift in Sources */,
 				458D31FF22DF166800122239 /* SDConst.swift in Sources */,
 				CBD5F28B20B3EB7C00DFD55D /* HomeNewsModel.swift in Sources */,
