@@ -28,6 +28,7 @@ class ThirdViewController: UIViewController {
         super.viewWillDisappear(animated)
         self.hidesBottomBarWhenPushed = false
     }
+    
     let ob = Observable<Any>.create { (observer) -> Disposable in
         return Disposables.create()
     }
