@@ -22,7 +22,7 @@ class MyTabbarViewController: UITabBarController {
     private func addChildViewControllers() {
         setChildViewController(ThirdViewController(), title: "Table", imageName: "live_nor",selectName: "zhibo_hi")
         setChildViewController(Test1ViewController(), title: "Collection", imageName: "shouye_nor",selectName: "shouye_hi")
-        setChildViewController(Test2ViewController(), title: "Test2", imageName: "live_nor",selectName: "kecheng_hi")
+        setChildViewController(Test2ViewController(), title: "Test2", imageName: "wangke_nor",selectName: "kecheng_hi")
     }
     
     private func setChildViewController(_ childVC:UIViewController ,title:String ,imageName:String ,selectName:String) {

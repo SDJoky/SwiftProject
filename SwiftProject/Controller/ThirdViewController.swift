@@ -19,21 +19,12 @@ import MJRefresh
 import SVProgressHUD
 
 class ThirdViewController: UIViewController {
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.hidesBottomBarWhenPushed = true
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        self.hidesBottomBarWhenPushed = false
-    }
     
     let ob = Observable<Any>.create { (observer) -> Disposable in
         return Disposables.create()
     }
-    let viewModel = TableVM()
-    
+
+    private lazy var viewModel : TableVM = TableVM()
     let tableView = UITableView()
     
     let dataSource = RxTableViewSectionedReloadDataSource<DataSection>(configureCell: {ds,tv,ip,item in
@@ -120,8 +111,8 @@ extension ThirdViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let detailVC = ThemeViewController()
+        detailVC.hidesBottomBarWhenPushed = true;
         self.navigationController?.pushViewController(detailVC, animated: true)
-        
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
