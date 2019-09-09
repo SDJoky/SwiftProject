@@ -12,3 +12,11 @@ import UIKit
 let SCREENW = UIScreen.main.bounds.size.width
 /// 屏幕的高
 let SCREENH = UIScreen.main.bounds.size.height
+
+let PATH_OF_CACHE = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.cachesDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)[0]
+let PATH_OF_DOCUMENT = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)[0]
+let PATH_OF_LIBRARY = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.libraryDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)[0]
+
+let downLoadFile = PATH_OF_DOCUMENT + "/DownLoad"
+
+
