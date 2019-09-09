@@ -18,8 +18,8 @@ class Test1ViewController: UIViewController,UICollectionViewDataSource,UICollect
     let pushAnim = SDPushAnimation()
     
     let flowLayout = UICollectionViewFlowLayout()
-    let device_id: Int = 6096495334
-    let iid: Int = 5034850950
+    let device_id: Int = 6096495345
+    let iid: Int = 5034850909
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,7 +55,11 @@ class Test1ViewController: UIViewController,UICollectionViewDataSource,UICollect
             if let value = response.result.value {
                 let json = JSON(value)
                 print("\(json)")
-                guard json["message"] == "success" else { return }
+                guard json["message"] == "success" else {
+                    SVProgressHUD.showError(withStatus: "请求失败了")
+                    self.myCollectionView.mj_header.endRefreshing()
+                    return
+                }
                 let dataDict = json["data"].dictionary
                 if let data = dataDict!["data"]!.arrayObject{
                     self.dataArr = data.compactMap({ HomeNewsModel.deserialize(from: $0 as? Dictionary) })
