@@ -8,19 +8,19 @@ target 'SwiftProject' do
   # Pods for SwiftProject
   pod 'Tiercel'
   pod 'Alamofire'
-  pod 'Kingfisher'
+  pod 'Kingfisher'  #图片下载、缓存的框架
 #  几种接受转模型库
   pod 'SwiftyJSON'
   pod 'ObjectMapper'
   pod 'HandyJSON'
   pod 'SVProgressHUD'
   pod 'MJRefresh'
-  pod 'SnapKit'
-  
+  pod 'SnapKit'    # 布局
+
   pod 'RxSwift'
   pod 'RxCocoa'
   pod 'NSObject+Rx'
-  pod 'Moya/RxSwift'
+  pod 'Moya/RxSwift' #函数响应式编程框架
   pod 'RxDataSources'
   pod 'Then'
   pod 'Kingfisher'
