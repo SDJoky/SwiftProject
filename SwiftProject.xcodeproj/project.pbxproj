@@ -133,6 +133,7 @@
 		4537D7FE22D3107800632DCB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CBD5F28A20B3EB7C00DFD55D /* HomeNewsModel.swift */,
 				4537D7FF22D3108900632DCB /* DataModel.swift */,
 			);
 			path = Model;
@@ -244,7 +245,6 @@
 				CBD3163620B2CF88000D793B /* MyPlayground.playground */,
 				45C3C1FB214BABE900AC5A82 /* Controller */,
 				CB1F4D40208F058400B7AC80 /* AppDelegate.swift */,
-				CBD5F28A20B3EB7C00DFD55D /* HomeNewsModel.swift */,
 				CB1F4D44208F058400B7AC80 /* Main.storyboard */,
 				CB1F4D47208F058700B7AC80 /* Assets.xcassets */,
 				CB1F4D49208F058700B7AC80 /* LaunchScreen.storyboard */,
