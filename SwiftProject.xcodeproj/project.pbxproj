@@ -159,10 +159,10 @@
 			isa = PBXGroup;
 			children = (
 				CB1B344520BBD3960039FD9E /* MyTabbarViewController.swift */,
-				CB1B344720BBD5F70039FD9E /* Test1ViewController.swift */,
-				455E9775214A477900D59AB5 /* Test1DetailViewController.swift */,
-				CB1B344920BBDBF60039FD9E /* Test2ViewController.swift */,
 				45C3C1F9214BAA6D00AC5A82 /* ThirdViewController.swift */,
+				CB1B344720BBD5F70039FD9E /* Test1ViewController.swift */,
+				CB1B344920BBDBF60039FD9E /* Test2ViewController.swift */,
+				455E9775214A477900D59AB5 /* Test1DetailViewController.swift */,
 				45469EAE22F2A997000A94EA /* ThemeViewController.swift */,
 			);
 			path = Controller;

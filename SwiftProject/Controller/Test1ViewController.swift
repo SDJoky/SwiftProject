@@ -84,15 +84,9 @@ class Test1ViewController: UIViewController,UICollectionViewDataSource,UICollect
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let detailVC = Test1DetailViewController()
-        if indexPath.row % 2 == 0 {
-            self.navigationController?.delegate = pushAnim;
-            detailVC.hidesBottomBarWhenPushed = true;//加上这句就可以隐藏推出的ViewController的Tabbar
-            self.navigationController?.pushViewController(detailVC, animated: true)
-        }else
-        {
-            detailVC.transitioningDelegate = pushAnim;
-            present(detailVC, animated: true, completion: nil)
-        }
+        self.navigationController?.delegate = pushAnim;
+        detailVC.hidesBottomBarWhenPushed = true;//加上这句就可以隐藏推出的ViewController的Tabbar
+        self.navigationController?.pushViewController(detailVC, animated: true)
         
     }
 }
