@@ -18,12 +18,10 @@ class Test1ViewController: UIViewController,UICollectionViewDataSource,UICollect
     let pushAnim = SDPushAnimation()
     
     let flowLayout = UICollectionViewFlowLayout()
-    let device_id: Int = 6096495345
-    let iid: Int = 5034850909
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        flowLayout.itemSize = CGSize.init(width: 105, height: 70)
+        flowLayout.itemSize = CGSize.init(width:(SCREENW-10 * 2) / 2.0, height: (SCREENW-10 * 2) / 2.0 + 50)
         flowLayout.scrollDirection = UICollectionViewScrollDirection.vertical
         flowLayout.sectionInset = UIEdgeInsetsMake(0, 5, 0, 5)
         self.myCollectionView = UICollectionView(frame: CGRect.init(x: 0, y: 15, width: self.view.frame.size.width, height: self.view.frame.height - 49 - 15), collectionViewLayout: flowLayout)
@@ -43,31 +41,29 @@ class Test1ViewController: UIViewController,UICollectionViewDataSource,UICollect
     }
 
     private func loadRequest() {
-        let url = "https://is.snssdk.com/article/category/get_subscribed/v1/?"
-        let params = ["device_id": device_id,"iid":iid]
+        let url = "http://news-at.zhihu.com/api/4/news/latest"
         
-        Alamofire.request(url,parameters:params).responseJSON{ (response) in
+        Alamofire.request(url,parameters:nil).responseJSON{ (response) in
             guard response.result.isSuccess else {
                 SVProgressHUD.showError(withStatus: "请求失败")
                 self.myCollectionView.mj_header.endRefreshing()
                 return
             }
-            if let value = response.result.value {
-                let json = JSON(value)
-                print("\(json)")
-                guard json["message"] == "success" else {
-                    SVProgressHUD.showError(withStatus: "请求失败了")
-                    self.myCollectionView.mj_header.endRefreshing()
-                    return
+            if response.result.isSuccess {
+                if let jsons = response.result.value {
+                    print("\(jsons)")
+                    let jsonDict = JSON(jsons)
+                    if let data = jsonDict["top_stories"].arrayObject{
+                        self.dataArr = data.compactMap({ HomeNewsModel.deserialize(from: $0 as? Dictionary) })
+                    }
+                    self.myCollectionView.reloadData()
                 }
-                let dataDict = json["data"].dictionary
-                if let data = dataDict!["data"]!.arrayObject{
-                    self.dataArr = data.compactMap({ HomeNewsModel.deserialize(from: $0 as? Dictionary) })
-                }
-                self.myCollectionView.reloadData()
+                self.myCollectionView.mj_header.endRefreshing()
+                SVProgressHUD.showSuccess(withStatus: "请求成功")
+            } else {
+                SVProgressHUD.showError(withStatus: "请求失败了")
+                self.myCollectionView.mj_header.endRefreshing()
             }
-            self.myCollectionView.mj_header.endRefreshing()
-            SVProgressHUD.showSuccess(withStatus: "请求成功")
         }
         
     }

@@ -10,14 +10,12 @@ import UIKit
 import HandyJSON
 
 struct  HomeNewsModel: HandyJSON {
-    var tip_new: Int = 0
-    var default_add: Int = 0
-    var web_url: String = ""
-    var concern_id: String = ""
-    var icon_url: String = ""
-    var flags: Int = 0
     var type: Int = 0
-    var name: String = "--"
-    var category: String = "--"
+    var image: String = ""
+    var hint: String = ""
+    var title: String = ""
+    var id: Int = 0
+    var image_hue: String = ""
+    var url: String = ""
 }
 
