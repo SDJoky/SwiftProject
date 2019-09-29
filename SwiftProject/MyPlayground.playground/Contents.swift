@@ -78,7 +78,7 @@ while i <= 100 {
 }
 
 //包含参数和返回类型的简写
-func addNumber(x:Int , y:Int) -> Int{
+func addNumber(x: Int , y: Int) -> Int{
     return x + y
 }
 addNumber(x: 1, y: 2)
@@ -208,6 +208,17 @@ if assumdStr != nil {
 let age = 3
 //使用断言调试
 assert(age >= 0,"age 不能小于0")
+
+//闭包  in 区分函数参数返回值 与实现
+let exDemo = { (x: Int, y: Int) -> Int in
+    print(x+y)
+    return x+y
+}
+exDemo(1,2)
+
+
+
+
 
 
 
