@@ -26,6 +26,8 @@ var 课程 = (day:3,unit:"天")
 
 //可选类型
 var addr : String?
+let testAddr = addr ??  "abc"
+
 addr = "上海市普陀区"
 var what : String? = "这是什么"
 
@@ -172,7 +174,7 @@ arrC.newDes()
 
 //协议可多继承 class不可
 //打印在控制条和playground
-protocol MyPrint : CustomStringConvertible,CustomPlaygroundQuickLookable{
+protocol MyPrint : CustomStringConvertible,CustomPlaygroundDisplayConvertible{
     
 }
 
