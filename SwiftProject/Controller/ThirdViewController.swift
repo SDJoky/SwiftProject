@@ -83,15 +83,15 @@ extension ThirdViewController {
         vmOutput.refreshStaus.asObservable().subscribe(onNext: {[weak self] status in
             switch status {
             case .beingHeaderRefresh:
-                self?.tableView.mj_header.beginRefreshing()
+                self!.tableView.mj_header.beginRefreshing()
             case .endHeaderRefresh:
-                self?.tableView.mj_header.endRefreshing()
+                self!.tableView.mj_header.endRefreshing()
             case .beingFooterRefresh:
-                self?.tableView.mj_footer.beginRefreshing()
+                self!.tableView.mj_footer.beginRefreshing()
             case .endFooterRefresh:
-                self?.tableView.mj_footer.endRefreshing()
+                self!.tableView.mj_footer.endRefreshing()
             case .noMoreData:
-                self?.tableView.mj_footer.endRefreshingWithNoMoreData()
+                self!.tableView.mj_footer.endRefreshingWithNoMoreData()
             default:
                 break
             }
@@ -112,7 +112,7 @@ extension ThirdViewController: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
         let detailVC = ThemeViewController()
         detailVC.hidesBottomBarWhenPushed = true;
-        self.navigationController?.pushViewController(detailVC, animated: true)
+        navigationController?.pushViewController(detailVC, animated: true)
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {

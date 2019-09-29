@@ -12,7 +12,7 @@ class MyTabbarViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tabBar.tintColor = UIColor.orange
+        tabBar.tintColor = UIColor.orange
         addChildViewControllers()
         let navigationBar = UINavigationBar.appearance()
         navigationBar.setBackgroundImage(UIImage(named: "navigation_background"), for: .default)

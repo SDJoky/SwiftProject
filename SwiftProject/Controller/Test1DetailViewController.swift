@@ -12,13 +12,13 @@ class Test1DetailViewController: UIViewController {
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .yellow
+        view.backgroundColor = .yellow
         let btn : UIButton = creatBtn(title: "点击diss", titleColor: UIColor.red, backGroundColor: UIColor.yellow)
         btn.addTarget(self, action: #selector(disAction), for: .touchUpInside)
-        self.view.addSubview(btn)
+        view.addSubview(btn)
         btn.snp.remakeConstraints { (make) in
-            make.centerX.equalTo(self.view)
-            make.centerY.equalTo(self.view)
+            make.centerX.equalTo(view)
+            make.centerY.equalTo(view)
             make.width.equalTo(100)
             make.height.equalTo(30)
         }
@@ -34,11 +34,11 @@ class Test1DetailViewController: UIViewController {
     
     @objc func disAction()
     {
-        if (self.navigationController != nil) {
-            self.navigationController?.popViewController(animated: true)
+        if (navigationController != nil) {
+            navigationController!.popViewController(animated: true)
         }else
         {
-            self.dismiss(animated: true, completion: nil)
+            dismiss(animated: true, completion: nil)
         }
     }
 

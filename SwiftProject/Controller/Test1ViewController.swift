@@ -24,20 +24,20 @@ class Test1ViewController: UIViewController,UICollectionViewDataSource,UICollect
         flowLayout.itemSize = CGSize.init(width:(SCREENW-10 * 2) / 2.0, height: (SCREENW-10 * 2) / 2.0 + 50)
         flowLayout.scrollDirection = UICollectionViewScrollDirection.vertical
         flowLayout.sectionInset = UIEdgeInsetsMake(0, 5, 0, 5)
-        self.myCollectionView = UICollectionView(frame: CGRect.init(x: 0, y: 15, width: self.view.frame.size.width, height: self.view.frame.height - 49 - 15), collectionViewLayout: flowLayout)
-        self.myCollectionView.backgroundColor = UIColor.white
-        self.myCollectionView.register(UINib.init(nibName:"CollectionViewCell" , bundle: Bundle.main), forCellWithReuseIdentifier: "CollectionViewCell")
-        self.myCollectionView.dataSource = self
-        self.myCollectionView.delegate = self;
-        self.myCollectionView.alwaysBounceVertical = true
-        self.view.addSubview(self.myCollectionView)
+        myCollectionView = UICollectionView(frame: CGRect.init(x: 0, y: 15, width: view.frame.size.width, height: view.frame.height - 49 - 15), collectionViewLayout: flowLayout)
+        myCollectionView.backgroundColor = UIColor.white
+        myCollectionView.register(UINib.init(nibName:"CollectionViewCell" , bundle: Bundle.main), forCellWithReuseIdentifier: "CollectionViewCell")
+        myCollectionView.dataSource = self
+        myCollectionView.delegate = self;
+        myCollectionView.alwaysBounceVertical = true
+        view.addSubview(myCollectionView)
         // 下拉刷新
         let header = MJRefreshNormalHeader { [weak self] in
-            self?.loadRequest()
+            self!.loadRequest()
         }
         header?.isAutomaticallyChangeAlpha = true
-        self.myCollectionView.mj_header = header
-        self.myCollectionView.mj_header .beginRefreshing()
+        myCollectionView.mj_header = header
+        myCollectionView.mj_header .beginRefreshing()
     }
 
     private func loadRequest() {
@@ -84,9 +84,9 @@ class Test1ViewController: UIViewController,UICollectionViewDataSource,UICollect
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let detailVC = Test1DetailViewController()
-        self.navigationController?.delegate = pushAnim;
+        navigationController?.delegate = pushAnim;
         detailVC.hidesBottomBarWhenPushed = true;//加上这句就可以隐藏推出的ViewController的Tabbar
-        self.navigationController?.pushViewController(detailVC, animated: true)
+        navigationController?.pushViewController(detailVC, animated: true)
         
     }
 }

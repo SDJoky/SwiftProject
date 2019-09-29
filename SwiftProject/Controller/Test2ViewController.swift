@@ -20,7 +20,7 @@ class Test2ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.loadInterface()
+        loadInterface()
     }
     
     func loadInterface() {
@@ -28,7 +28,7 @@ class Test2ViewController: UIViewController {
         let tipLbl = UILabel()
         tipLbl.text = "下载之Tiercel使用："
         tipLbl.font = UIFont.systemFont(ofSize: 14)
-        self.view.addSubview(tipLbl)
+        view.addSubview(tipLbl)
         tipLbl.snp.remakeConstraints { (make) in
             make.height.equalTo(50)
             make.left.equalTo(20)
@@ -37,7 +37,7 @@ class Test2ViewController: UIViewController {
         
         let downLoadBtn:UIButton = creatBtn(title: "开始下载", titleColor: UIColor.white, backGroundColor: UIColor.purple)
         downLoadBtn.addTarget(self, action: #selector(downLoadAction(_:)), for: .touchUpInside)
-        self.view.addSubview(downLoadBtn)
+        view.addSubview(downLoadBtn)
         downLoadBtn.snp.remakeConstraints { (make) in
             make.width.equalTo(100)
             make.height.equalTo(50)
@@ -47,7 +47,7 @@ class Test2ViewController: UIViewController {
         
         let suspendBtn:UIButton = creatBtn(title: "暂停下载", titleColor: UIColor.white, backGroundColor: UIColor.purple)
         suspendBtn.addTarget(self, action: #selector(suspendAction(_:)), for: .touchUpInside)
-        self.view.addSubview(suspendBtn)
+        view.addSubview(suspendBtn)
         suspendBtn.snp.remakeConstraints { (make) in
             make.width.equalTo(100)
             make.height.equalTo(50)
@@ -57,7 +57,7 @@ class Test2ViewController: UIViewController {
         
         let restartBtn:UIButton = creatBtn(title: "重新开始下载", titleColor: UIColor.white, backGroundColor: UIColor.purple)
         restartBtn.addTarget(self, action: #selector(restartAction(_:)), for: .touchUpInside)
-        self.view.addSubview(restartBtn)
+        view.addSubview(restartBtn)
         restartBtn.snp.remakeConstraints { (make) in
             make.width.equalTo(150)
             make.height.equalTo(50)
@@ -80,7 +80,7 @@ class Test2ViewController: UIViewController {
         
         /*------------------Kingfisher使用-------------------------------*/
         let kingImg = UIImageView()
-        self.view.addSubview(kingImg)
+        view.addSubview(kingImg)
         //默认情况下Kingfisher使用url当做cache(缓存)的key
         //Kingfisher 默认先从内存和硬盘搜 ，如果没找到才去URL down
         kingImg.kf.setImage(with: URL(string:"http://www.08lr.cn/uploads/allimg/170513/1-1F513100951.jpg"), placeholder: UIImage(named: "BannerDefault"), options: nil, progressBlock: { (receivedSize, totalSize) in
