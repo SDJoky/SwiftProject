@@ -216,6 +216,22 @@ let exDemo = { (x: Int, y: Int) -> Int in
 }
 exDemo(1,2)
 
+//计算属性
+var remain : Int {
+    get{
+        return 7000
+    }
+    set{
+        print(newValue)
+        if newValue < remain {
+            print("要不起,真贵")
+        } else {
+            print("要得起，我有\(newValue)元")
+        }
+    }
+}
+remain = 8000
+
 
 
 
