@@ -216,7 +216,7 @@ let exDemo = { (x: Int, y: Int) -> Int in
 }
 exDemo(1,2)
 
-//计算属性
+//计算属性 (get set)
 var remain : Int {
     get{
         return 7000
