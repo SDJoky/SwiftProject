@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import RxDataSources
 import MJRefresh
-
+import SVProgressHUD
 class ThemeViewController: UIViewController {
 
     private let dispose = DisposeBag()
@@ -19,9 +19,9 @@ class ThemeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "MVVM + RxSwift + HandyJSON"
         self.setupUI()
         self.bindView()
+        title = "MVVM + RxSwift + HandyJSON"
     }
     
     private let dataSource = RxTableViewSectionedReloadDataSource<ZHNewsModel>(configureCell: {ds,tv,ip,item in
@@ -62,22 +62,28 @@ extension ThemeViewController {
         
 //        下拉刷新
         tableView.mj_header = MJRefreshGifHeader()
-        tableView.mj_header.rx.refreshing.subscribe({ [weak self](e) in
+        tableView.mj_header
+            .rx
+            .refreshing
+            .subscribe({ [weak self](e) in
             self?.viewModel.loadData(endFreshBinder: self!.tableView.rx.endRefresh, disposeBag: self!.dispose)
 
         }).disposed(by: self.dispose)
         
 //        上拉加载
         tableView.mj_footer = MJRefreshAutoGifFooter()
-        tableView.mj_footer.rx.refreshing.subscribe({ [weak self](e) in
-
+        tableView.mj_footer
+            .rx
+            .refreshing
+            .subscribe({ [weak self](e) in
+            self?.viewModel.loadMoreData(endFreshBinder: self!.tableView.rx.endRefresh, disposeBag: self!.dispose)
         }).disposed(by: self.dispose)
         
 //        选中某行
         tableView.rx
             .modelSelected(StoryModel.self)
             .subscribe(onNext: { (model) in
-           
+                SVProgressHUD.showInfo(withStatus: model.hint)
             }).disposed(by: dispose)
         
         tableView.mj_header.beginRefreshing()

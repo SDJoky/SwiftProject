@@ -135,6 +135,7 @@
 		4537D7F922D3101F00632DCB /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				45A0086522D5D2D3003A1F54 /* ThirdNetTool.swift */,
 				4537D7FC22D3105200632DCB /* TableVM.swift */,
 				457E259B235ECE2600141CAC /* ThemeVM.swift */,
 			);
@@ -198,7 +199,6 @@
 			children = (
 				458D31FE22DF166800122239 /* SDConst.swift */,
 				455E9781214A4E1600D59AB5 /* SDPushAnimation.swift */,
-				45A0086522D5D2D3003A1F54 /* ThirdNetTool.swift */,
 				45FA2BFC2326186D00D281C3 /* BaseUrlRequest.swift */,
 				457E258B235E97F900141CAC /* ApiManager.swift */,
 				457E2595235EA55E00141CAC /* JsonToModel.swift */,

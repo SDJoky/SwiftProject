@@ -14,6 +14,7 @@ let provider = MoyaProvider<ApiManager>()
 enum ApiManager {
 //    接口信息
     case getNewsList
+    case getMoreNews(String)
 }
 
 extension ApiManager : TargetType {
@@ -22,6 +23,8 @@ extension ApiManager : TargetType {
         switch self {
         case .getNewsList:
             return "4/news/latest"
+        case .getMoreNews(let date):
+            return "4/news/before/" + date
         }
     }
     

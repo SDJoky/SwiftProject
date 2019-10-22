@@ -71,7 +71,7 @@ class SDTestHeaderView: UIView {
     
     lazy var nameLbl : UILabel = {
         let nameLbl = UILabel()
-        nameLbl.text = "name"
+        nameLbl.text = "Moya-MVVM-ObjectMapper-NSObject_Rx"
         nameLbl.textColor = UIColor.white
         return nameLbl
     }()

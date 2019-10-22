@@ -11,7 +11,6 @@ import RxSwift
 import RxCocoa
 import NSObject_Rx
 import RxDataSources
-import Then
 import SnapKit
 import Moya
 import Kingfisher
@@ -37,7 +36,6 @@ class ThirdViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         bindView()
-        
         // 加载数据
         tableView.mj_header.beginRefreshing()
     }

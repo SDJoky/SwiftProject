@@ -12,9 +12,10 @@ import RxCocoa
 import SVProgressHUD
 
 class ThemeVM{
+    private var date: String = ""
     
     let data = BehaviorRelay<[ZHNewsModel]>(value: [])
-    
+//    下拉刷新
     func loadData(endFreshBinder:Binder<Bool>,
                   disposeBag: DisposeBag) {
         
@@ -23,10 +24,27 @@ class ThemeVM{
                    .mapModel(ZHNewsModel.self)
                    .subscribe(onNext: { (model) in
                     self.data.accept([ZHNewsModel.init(original: model, items: model.stories)])
+                    self.date = model.date
                     SVProgressHUD.showSuccess(withStatus: "请求成功")
                    }).disposed(by: disposeBag)
         self.data.map{ _ in true }.bind(to: endFreshBinder).disposed(by: disposeBag)
 
+    }
+    
+//    上拉加载
+    func loadMoreData(endFreshBinder:Binder<Bool>,
+    disposeBag: DisposeBag) {
+        
+        provider.rx.request(.getMoreNews(self.date))
+                   .asObservable()
+                   .mapModel(ZHNewsModel.self)
+                   .subscribe(onNext:{ (model) in
+                    self.date = model.date
+                    self.data.accept(self.data.value + [ZHNewsModel.init(original: model, items: model.stories)])
+                   }).disposed(by: disposeBag)
+        
+        self.data.map{ _ in true }.bind(to: endFreshBinder).disposed(by: disposeBag)
+        
     }
                
 }
