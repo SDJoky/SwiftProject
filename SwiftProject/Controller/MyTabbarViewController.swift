@@ -17,6 +17,7 @@ class MyTabbarViewController: UITabBarController {
         let navigationBar = UINavigationBar.appearance()
         navigationBar.setBackgroundImage(UIImage(named: "navigation_background"), for: .default)
         navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+        navigationBar.tintColor = UIColor.white
     }
     
     private func addChildViewControllers() {

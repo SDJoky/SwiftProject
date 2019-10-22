@@ -24,7 +24,7 @@ class Test1ViewController: UIViewController,UICollectionViewDataSource,UICollect
         flowLayout.itemSize = CGSize.init(width:(SCREENW-10 * 2) / 2.0, height: (SCREENW-10 * 2) / 2.0 + 50)
         flowLayout.scrollDirection = UICollectionViewScrollDirection.vertical
         flowLayout.sectionInset = UIEdgeInsetsMake(0, 5, 0, 5)
-        myCollectionView = UICollectionView(frame: CGRect.init(x: 0, y: 15, width: view.frame.size.width, height: view.frame.height - 49 - 15), collectionViewLayout: flowLayout)
+        myCollectionView = UICollectionView(frame: CGRect.init(x: 0, y: 5, width: view.frame.size.width, height: view.frame.height - 49 - 30), collectionViewLayout: flowLayout)
         myCollectionView.backgroundColor = UIColor.white
         myCollectionView.register(UINib.init(nibName:"CollectionViewCell" , bundle: Bundle.main), forCellWithReuseIdentifier: "CollectionViewCell")
         myCollectionView.dataSource = self
