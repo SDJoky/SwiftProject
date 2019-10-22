@@ -7,10 +7,6 @@
 //
 
 import UIKit
-import RxSwift
-import RxDataSources
-import MJRefresh
-import SVProgressHUD
 
 class ThemeViewController: UIViewController {
 

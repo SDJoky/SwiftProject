@@ -8,7 +8,6 @@
 
 
 import UIKit
-import Moya
 
 let lxfNetTool = MoyaProvider<ThirdNetTool>()
 enum ThirdNetTool {

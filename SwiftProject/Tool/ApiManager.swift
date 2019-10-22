@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Moya
+
 
 let provider = MoyaProvider<ApiManager>()
 

@@ -7,9 +7,6 @@
 //
 
 import Foundation
-import RxSwift
-import RxCocoa
-import SVProgressHUD
 
 class ThemeVM{
     private var date: String = ""

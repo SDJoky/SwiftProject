@@ -7,6 +7,13 @@
 //
 
 import UIKit
+@_exported import RxSwift
+@_exported import Moya
+@_exported import RxDataSources
+@_exported import SVProgressHUD
+@_exported import RxCocoa
+@_exported import MJRefresh
+@_exported import SnapKit
 
 /// 屏幕的宽
 let SCREENW = UIScreen.main.bounds.size.width

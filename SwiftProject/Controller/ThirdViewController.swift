@@ -7,15 +7,8 @@
 //
 
 import UIKit
-import RxSwift
-import RxCocoa
 import NSObject_Rx
-import RxDataSources
-import SnapKit
-import Moya
 import Kingfisher
-import MJRefresh
-import SVProgressHUD
 
 class ThirdViewController: UIViewController {
 

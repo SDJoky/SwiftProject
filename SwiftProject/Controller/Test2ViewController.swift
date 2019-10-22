@@ -8,8 +8,6 @@
 
 import UIKit
 import Tiercel
-import SnapKit
-import SVProgressHUD
 import Kingfisher
 
 class Test2ViewController: UIViewController {

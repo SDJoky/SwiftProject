@@ -6,9 +6,7 @@
 //  Copyright © 2019 Joky_Lee. All rights reserved.
 //
 
-import Moya
 import HandyJSON
-import RxSwift
 
 //扩展Moya支持HandyJSON的解析
 extension ObservableType where E == Response {
