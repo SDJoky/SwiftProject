@@ -41,7 +41,6 @@ struct DataModel: Mappable {
 
 struct DataSection {
     var items : [Item]
-    
 }
 
 extension DataSection : SectionModelType {

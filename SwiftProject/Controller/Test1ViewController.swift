@@ -13,11 +13,11 @@ import SVProgressHUD
 import MJRefresh
 
 class Test1ViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UICollectionViewDelegate{
-    var dataArr = [HomeNewsModel]()
+    private var dataArr = [HomeNewsModel]()
     private var myCollectionView: UICollectionView!
     let pushAnim = SDPushAnimation()
     
-    let flowLayout = UICollectionViewFlowLayout()
+    private let flowLayout = UICollectionViewFlowLayout()
     
     override func viewDidLoad() {
         super.viewDidLoad()

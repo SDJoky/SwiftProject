@@ -21,6 +21,7 @@ target 'SwiftProject' do
   pod 'RxCocoa'
   pod 'NSObject+Rx'
   pod 'Moya/RxSwift' #函数响应式编程框架
+  pod 'Moya'
   pod 'RxDataSources'
   pod 'Then'
   pod 'Kingfisher'

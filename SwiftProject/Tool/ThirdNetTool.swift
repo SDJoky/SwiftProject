@@ -10,6 +10,7 @@
 import UIKit
 import Moya
 
+let lxfNetTool = MoyaProvider<ThirdNetTool>()
 enum ThirdNetTool {
     enum LXFNetworkCategory: String {
         case ios     = "iOS"
@@ -67,6 +68,4 @@ extension ThirdNetTool : TargetType {
         return false
     }
 }
-
-let lxfNetTool = MoyaProvider<ThirdNetTool>()
 

@@ -15,8 +15,8 @@ import Kingfisher
 class Test2ViewController: UIViewController {
     
     //Tiercel 下载器使用
-    lazy var downloadManager = TRManager()
-    lazy var urlStr = "https://officecdn-microsoft-com.akamaized.net/pr/C1297A47-86C4-4C1F-97FA-950631F94777/OfficeMac/Microsoft_Office_2016_16.10.18021001_Installer.pkg"
+    private lazy var downloadManager = TRManager()
+    private lazy var urlStr = "https://officecdn-microsoft-com.akamaized.net/pr/C1297A47-86C4-4C1F-97FA-950631F94777/OfficeMac/Microsoft_Office_2016_16.10.18021001_Installer.pkg"
     
     override func viewDidLoad() {
         super.viewDidLoad()

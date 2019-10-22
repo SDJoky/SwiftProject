@@ -67,13 +67,15 @@ extension TableVM : VMProtocol {
                     case let .next(modelArr):
                         self?.models.value = isReloadData ? modelArr : (self?.models.value ?? []) + modelArr
                         SVProgressHUD.showSuccess(withStatus: "请求成功")
-                        print(modelArr)
+//                        print(modelArr)
                     case let .error(error):
                         SVProgressHUD.showError(withStatus:error.localizedDescription)
                     case .completed:
                         output.refreshStaus.value = isReloadData ? .endHeaderRefresh : .endFooterRefresh
                     }
                 }).disposed(by: self.rx.disposeBag)
+            
+            
         }).disposed(by : rx.disposeBag)
         
         return output

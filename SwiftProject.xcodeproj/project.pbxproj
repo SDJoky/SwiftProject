@@ -16,6 +16,11 @@
 		45469EAF22F2A997000A94EA /* ThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45469EAE22F2A997000A94EA /* ThemeViewController.swift */; };
 		455E9776214A477900D59AB5 /* Test1DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455E9775214A477900D59AB5 /* Test1DetailViewController.swift */; };
 		455E9782214A4E1600D59AB5 /* SDPushAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455E9781214A4E1600D59AB5 /* SDPushAnimation.swift */; };
+		457E258C235E97F900141CAC /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457E258B235E97F900141CAC /* ApiManager.swift */; };
+		457E2596235EA55E00141CAC /* JsonToModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457E2595235EA55E00141CAC /* JsonToModel.swift */; };
+		457E2598235EACF800141CAC /* ZHNewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457E2597235EACF800141CAC /* ZHNewsModel.swift */; };
+		457E259C235ECE2600141CAC /* ThemeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457E259B235ECE2600141CAC /* ThemeVM.swift */; };
+		457E25A0235EF15200141CAC /* RxExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457E259F235EF15200141CAC /* RxExtension.swift */; };
 		458D31FD22DF135800122239 /* SDTestHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458D31FC22DF135800122239 /* SDTestHeaderView.swift */; };
 		458D31FF22DF166800122239 /* SDConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458D31FE22DF166800122239 /* SDConst.swift */; };
 		45A0086622D5D2D3003A1F54 /* ThirdNetTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A0086522D5D2D3003A1F54 /* ThirdNetTool.swift */; };
@@ -65,6 +70,11 @@
 		45469EAE22F2A997000A94EA /* ThemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeViewController.swift; sourceTree = "<group>"; };
 		455E9775214A477900D59AB5 /* Test1DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test1DetailViewController.swift; sourceTree = "<group>"; };
 		455E9781214A4E1600D59AB5 /* SDPushAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDPushAnimation.swift; sourceTree = "<group>"; };
+		457E258B235E97F900141CAC /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
+		457E2595235EA55E00141CAC /* JsonToModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonToModel.swift; sourceTree = "<group>"; };
+		457E2597235EACF800141CAC /* ZHNewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZHNewsModel.swift; sourceTree = "<group>"; };
+		457E259B235ECE2600141CAC /* ThemeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeVM.swift; sourceTree = "<group>"; };
+		457E259F235EF15200141CAC /* RxExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxExtension.swift; sourceTree = "<group>"; };
 		458D31FC22DF135800122239 /* SDTestHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDTestHeaderView.swift; sourceTree = "<group>"; };
 		458D31FE22DF166800122239 /* SDConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDConst.swift; sourceTree = "<group>"; };
 		45A0086522D5D2D3003A1F54 /* ThirdNetTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdNetTool.swift; sourceTree = "<group>"; };
@@ -126,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				4537D7FC22D3105200632DCB /* TableVM.swift */,
+				457E259B235ECE2600141CAC /* ThemeVM.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -135,6 +146,7 @@
 			children = (
 				CBD5F28A20B3EB7C00DFD55D /* HomeNewsModel.swift */,
 				4537D7FF22D3108900632DCB /* DataModel.swift */,
+				457E2597235EACF800141CAC /* ZHNewsModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -184,10 +196,13 @@
 		45C3C1FD214BB04600AC5A82 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				458D31FE22DF166800122239 /* SDConst.swift */,
 				455E9781214A4E1600D59AB5 /* SDPushAnimation.swift */,
 				45A0086522D5D2D3003A1F54 /* ThirdNetTool.swift */,
-				458D31FE22DF166800122239 /* SDConst.swift */,
 				45FA2BFC2326186D00D281C3 /* BaseUrlRequest.swift */,
+				457E258B235E97F900141CAC /* ApiManager.swift */,
+				457E2595235EA55E00141CAC /* JsonToModel.swift */,
+				457E259F235EF15200141CAC /* RxExtension.swift */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -341,6 +356,7 @@
 				TargetAttributes = {
 					CB1F4D3C208F058400B7AC80 = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 1110;
 					};
 					CB1F4D50208F058700B7AC80 = {
 						CreatedOnToolsVersion = 9.3;
@@ -488,12 +504,17 @@
 				4537D7FD22D3105200632DCB /* TableVM.swift in Sources */,
 				CB1B344A20BBDBF60039FD9E /* Test2ViewController.swift in Sources */,
 				4537D80B22D322D300632DCB /* Response+ObjectMapper.swift in Sources */,
+				457E2598235EACF800141CAC /* ZHNewsModel.swift in Sources */,
 				458D31FD22DF135800122239 /* SDTestHeaderView.swift in Sources */,
 				CB1B344620BBD3960039FD9E /* MyTabbarViewController.swift in Sources */,
 				45A0086622D5D2D3003A1F54 /* ThirdNetTool.swift in Sources */,
+				457E258C235E97F900141CAC /* ApiManager.swift in Sources */,
 				45BDEBE0233B2B3B000EDFDE /* CollectionViewCell.swift in Sources */,
 				4537D80022D3108900632DCB /* DataModel.swift in Sources */,
+				457E2596235EA55E00141CAC /* JsonToModel.swift in Sources */,
+				457E25A0235EF15200141CAC /* RxExtension.swift in Sources */,
 				CB1F4D41208F058400B7AC80 /* AppDelegate.swift in Sources */,
+				457E259C235ECE2600141CAC /* ThemeVM.swift in Sources */,
 				45469EAF22F2A997000A94EA /* ThemeViewController.swift in Sources */,
 				45FA2BFD2326186D00D281C3 /* BaseUrlRequest.swift in Sources */,
 				455E9782214A4E1600D59AB5 /* SDPushAnimation.swift in Sources */,
@@ -674,6 +695,7 @@
 			baseConfigurationReference = C5C2103A3291AD4479E12E6E /* Pods-SwiftProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SwiftProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -682,6 +704,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = szy.SwiftProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -692,6 +716,7 @@
 			baseConfigurationReference = 3F84D1437F2CB2427CB2F05F /* Pods-SwiftProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SwiftProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -700,6 +725,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = szy.SwiftProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

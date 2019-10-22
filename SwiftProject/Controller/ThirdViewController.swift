@@ -19,15 +19,11 @@ import MJRefresh
 import SVProgressHUD
 
 class ThirdViewController: UIViewController {
-    
-    let ob = Observable<Any>.create { (observer) -> Disposable in
-        return Disposables.create()
-    }
 
     private lazy var viewModel : TableVM = TableVM()
-    let tableView = UITableView()
+    private let tableView = UITableView()
     
-    let dataSource = RxTableViewSectionedReloadDataSource<DataSection>(configureCell: {ds,tv,ip,item in
+    private let dataSource = RxTableViewSectionedReloadDataSource<DataSection>(configureCell: {ds,tv,ip,item in
         let cell : TestTableViewCell = tv.dequeueReusableCell(withIdentifier: "TestTableViewCell", for: ip) as! TestTableViewCell
         cell.desLbl.text = "time: \(item.publishedAt)"
         cell.photoImgV.kf.setImage(with: URL(string: item.url))
