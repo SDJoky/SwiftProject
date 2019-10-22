@@ -11,6 +11,7 @@ import RxSwift
 import RxDataSources
 import MJRefresh
 import SVProgressHUD
+
 class ThemeViewController: UIViewController {
 
     private let dispose = DisposeBag()
@@ -24,23 +25,12 @@ class ThemeViewController: UIViewController {
         title = "MVVM + RxSwift + HandyJSON"
     }
     
-    private let dataSource = RxTableViewSectionedReloadDataSource<ZHNewsModel>(configureCell: {ds,tv,ip,item in
-        let cell : TestTableViewCell = tv.dequeueReusableCell(withIdentifier: "TestTableViewCell", for: ip) as! TestTableViewCell
-        cell.desLbl.text = "标题: \(item.title)"
-        cell.nameLbl.text = "描述:\(item.hint)"
-        if item.images.count > 0 {
-            cell.photoImgV.kf.setImage(with: URL(string: item.images[0]))
-        }
-        return cell
-    })
-    
-    
 }
 
 extension ThemeViewController {
     fileprivate func setupUI() {
         view.backgroundColor = .red
-        tableView = UITableView(frame: .zero, style: .plain)
+        tableView = UITableView(frame: .zero, style: .grouped)
         view.addSubview(tableView)
         tableView.register(UINib(nibName: "TestTableViewCell", bundle: nil), forCellReuseIdentifier: "TestTableViewCell")
         tableView.rowHeight = TestTableViewCell.cellHeigh()
@@ -55,6 +45,30 @@ extension ThemeViewController {
     fileprivate func bindView() {
         // 设置代理
         tableView.rx.setDelegate(self).disposed(by: dispose)
+        
+        let dataSource = RxTableViewSectionedReloadDataSource<ZHNewsModel>(
+            
+            configureCell: {ds,tv,ip,item in
+                
+                let cell : TestTableViewCell = tv.dequeueReusableCell(withIdentifier: "TestTableViewCell", for: ip) as! TestTableViewCell
+                cell.desLbl.text = "标题: \(item.title)"
+                cell.desLbl.textColor = UIColor.black
+                cell.nameLbl.text = "描述:\(item.hint)"
+                cell.nameLbl.textColor = UIColor.orange
+                if item.images.count > 0 {
+                    cell.photoImgV.kf.setImage(with: URL(string: item.images[0]))
+                    cell.photoImgV.layer.cornerRadius = 10
+                } else {
+                    cell.photoImgV.layer.cornerRadius = 0
+                }
+                return cell
+        },
+            //        设置分区头
+            titleForHeaderInSection: { ds,index in
+                return "时间为：\(ds.sectionModels[index].date)"
+            })
+            
+//        数据绑定
         viewModel.data
             .asObservable()
             .bind(to: self.tableView.rx.items(dataSource: dataSource))
@@ -93,12 +107,14 @@ extension ThemeViewController {
 }
 
 extension ThemeViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
+    //返回分区头部高度
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 10
     }
     
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 200
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 150
     }
+    
 }
 
