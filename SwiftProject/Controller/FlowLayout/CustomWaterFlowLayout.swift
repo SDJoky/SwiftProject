@@ -8,6 +8,11 @@
 
 import UIKit
 
+enum FlowLayoutStyle {
+    case styleOfEqualWidth
+    case styleOfEqualHeight
+}
+
 protocol WaterfallFlowLayoutDataSource: class {
     // caculate itemSize
     func waterfallFlowLayout(_ layout : WaterfallFlowLayout, sizeForItemAtIndexPath indexPath : IndexPath) -> CGSize
@@ -34,12 +39,7 @@ protocol WaterfallFlowLayoutDataSource: class {
     func edgeInsetInWaterfallFlowLayout(_ layout : WaterfallFlowLayout) -> UIEdgeInsets
 }
 
-enum FlowLayoutStyle {
-    case styleOfEqualWidth
-    case styleOfEqualHeight
-}
-
-class WaterfallFlowLayout: UICollectionViewLayout {
+class WaterfallFlowLayout: UICollectionViewLayout{
     var layoutStyle: FlowLayoutStyle = .styleOfEqualWidth
     weak var layoutDataSource: WaterfallFlowLayoutDataSource?
     // Store layout properties of all cells
@@ -49,13 +49,13 @@ class WaterfallFlowLayout: UICollectionViewLayout {
     // Store maxNumber of per row
     fileprivate var maxRowWidths = [CGFloat]()
     // latest content height
-    fileprivate var latestColumHeight:CGFloat = 0
+    fileprivate var currentMaxColumHeight:CGFloat = 0
     // latest content width
     fileprivate var latestRowWidth:CGFloat = 0
     
     // default colum
-    fileprivate var columCount:NSInteger{
-        get {
+    fileprivate var columCount:NSInteger {
+        get{
             return self.layoutDataSource?.columCountInWaterfallFlowLayout(self) ?? 2
         }
     }
@@ -68,21 +68,21 @@ class WaterfallFlowLayout: UICollectionViewLayout {
     }
     
     // space between colum
-    fileprivate var columMargin:CGFloat{
+    fileprivate var columMargin:CGFloat {
         get{
             return self.layoutDataSource?.columMarginInWaterfallFlowLayout(self) ?? 10
         }
     }
     
     // space between row
-    fileprivate var rowMargin:CGFloat{
+    fileprivate var rowMargin:CGFloat {
         get{
             return self.layoutDataSource?.rowMarginInWaterfallFlowLayout(self) ?? 10
         }
     }
     
     // space of edgeInset
-    fileprivate var sectionInset:UIEdgeInsets{
+    fileprivate var sectionInset:UIEdgeInsets {
         get{
             return self.layoutDataSource?.edgeInsetInWaterfallFlowLayout(self) ?? UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         }
@@ -91,15 +91,15 @@ class WaterfallFlowLayout: UICollectionViewLayout {
     override func prepare() {
         super.prepare()
         if layoutStyle == .styleOfEqualWidth {
-            self.latestColumHeight = 0
+            self.currentMaxColumHeight = 0
             self.maxColumHeights.removeAll()
             for _ in 0..<self.columCount {
                 self.maxColumHeights.append(self.sectionInset.top)
             }
-        }else if layoutStyle == .styleOfEqualHeight {
+        } else if layoutStyle == .styleOfEqualHeight {
             
-            // mark last content
-            self.latestColumHeight = 0
+            // mark lastest content
+            self.currentMaxColumHeight = 0
             self.maxColumHeights.removeAll()
             self.maxColumHeights.append(self.sectionInset.top)
             
@@ -108,29 +108,34 @@ class WaterfallFlowLayout: UICollectionViewLayout {
             self.maxRowWidths.append(self.sectionInset.left)
         }
         self.attributesArray.removeAll()
-        let sectionsCount = self.collectionView!.numberOfSections
+        let sectionNum = self.collectionView!.numberOfSections
         
-        // get per header
-        for section in 0..<sectionsCount {
-            if let headerSize = self.layoutDataSource?.waterfallFlowLayout(self, sizeForHeaderViewInSection: section), !headerSize.equalTo(CGSize.zero) {
-                if let headerAttributes = self.layoutAttributesForSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, at: IndexPath(item: 0, section: section)){
+        // get per section's information
+        for section in 0..<sectionNum {
+            
+            if let headerSize = self.layoutDataSource?.waterfallFlowLayout(self, sizeForHeaderViewInSection: section), !headerSize.equalTo(CGSize.zero){
+                // add header attribute
+                if let headerAttributes = self.layoutAttributesForSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, at: IndexPath(item: 0, section: section)) {
+                    
                     self.attributesArray.append(headerAttributes)
                 }
             }
             
             // install  properties of per cell
-            let rowsCount = self.collectionView!.numberOfItems(inSection: section)
+            let rowsNum = self.collectionView!.numberOfItems(inSection: section)
             var currentRow = 0
-            while currentRow < rowsCount {
+            while currentRow < rowsNum {
                 let indexPath = IndexPath(item: currentRow, section: section)
-                if let itemAttributes = self.layoutAttributesForItem(at: indexPath){
-                    self.attributesArray.append(itemAttributes)
+                // add row attribute
+                if let itemAttribute = self.layoutAttributesForItem(at: indexPath){
+                    self.attributesArray.append(itemAttribute)
                 }
                 currentRow += 1
             }
             
             //get per group of footer
             if let footerSize = self.layoutDataSource?.waterfallFlowLayout(self, sizeForFooterViewInSection: section), !footerSize.equalTo(CGSize.zero) {
+                //add footer attribute
                 if let footerAttribute = self.layoutAttributesForSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, at: IndexPath(item: 0, section: section)){
                     self.attributesArray.append(footerAttribute)
                 }
@@ -143,35 +148,30 @@ class WaterfallFlowLayout: UICollectionViewLayout {
     }
     
     override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
-        let attributes = UICollectionViewLayoutAttributes(forCellWith: indexPath)
+        let attribute = UICollectionViewLayoutAttributes(forCellWith: indexPath)
         if self.layoutStyle == .styleOfEqualWidth {
-           attributes.frame = self.itemFrameOfEqualWidthFlowLayout(indexPath)
+           attribute.frame = self.itemFrameOfEqualWidthFlowLayout(indexPath)
         }else if self.layoutStyle == .styleOfEqualHeight {
-           attributes.frame = self.itemFrameOfEqualHeightFlowLayout(indexPath)
+           attribute.frame = self.itemFrameOfEqualHeightFlowLayout(indexPath)
         }
-        return attributes
+        return attribute
     }
     
     override func layoutAttributesForSupplementaryView(ofKind elementKind: String, at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
         var layoutAttributes:UICollectionViewLayoutAttributes?
         if elementKind == UICollectionView.elementKindSectionHeader {
             layoutAttributes = UICollectionViewLayoutAttributes(forSupplementaryViewOfKind: elementKind, with: indexPath)
-            layoutAttributes?.frame = self.headerViewFrameOfFlowLayout(indexPath)
+            layoutAttributes?.frame = self.obtainSupplementaryFrameWithHeaderOrFooter(indexPath, true)
         } else if elementKind == UICollectionView.elementKindSectionFooter {
             layoutAttributes = UICollectionViewLayoutAttributes(forSupplementaryViewOfKind: elementKind, with: indexPath)
-            layoutAttributes?.frame = self.footerViewFrameOfFlowLayout(indexPath)
+            layoutAttributes?.frame = self.obtainSupplementaryFrameWithHeaderOrFooter(indexPath, false)
         }
         return layoutAttributes
     }
     
     override var collectionViewContentSize: CGSize{
         get {
-            if self.layoutStyle == .styleOfEqualWidth {
-               return CGSize(width: 0, height: self.latestColumHeight + self.sectionInset.bottom)
-            } else if self.layoutStyle == .styleOfEqualHeight {
-               return CGSize(width: 0, height: self.latestColumHeight + self.sectionInset.bottom)
-            }
-            return CGSize.zero
+            return CGSize(width: self.collectionView!.frame.size.width, height: self.currentMaxColumHeight + self.sectionInset.bottom)
         }
     }
 }
@@ -180,10 +180,11 @@ extension WaterfallFlowLayout {
     // style of equalWidth
     fileprivate func itemFrameOfEqualWidthFlowLayout(_ indexPath:IndexPath) -> CGRect{
         let viewWidth = self.collectionView!.frame.size.width
+        // caculate item width
         let currentW =  (viewWidth - self.sectionInset.left - self.sectionInset.right - CGFloat(self.columCount - 1) * self.columMargin) / CGFloat(self.columCount)
         let currentH = self.layoutDataSource?.waterfallFlowLayout(self, sizeForItemAtIndexPath: indexPath).height ?? 0
         
-        // find min height
+        // find all colums' min height
         var destColum: NSInteger = 0
         var minColumHeight = self.maxColumHeights.first ?? 0
         for i in 1..<self.columCount{
@@ -193,7 +194,7 @@ extension WaterfallFlowLayout {
                 destColum = i
             }
         }
-        
+        // put new item at min colum
         let x = self.sectionInset.left + CGFloat(destColum) * (currentW + self.columMargin)
         var y = minColumHeight
         if y != self.sectionInset.top {
@@ -203,8 +204,8 @@ extension WaterfallFlowLayout {
         //update the height of shortest colum
         self.maxColumHeights[destColum] = CGRect(x: x, y: y, width: currentW, height: currentH).maxY
         let columnHeight = self.maxColumHeights[destColum]
-        if self.latestColumHeight < columnHeight {
-            self.latestColumHeight = columnHeight
+        if self.currentMaxColumHeight < columnHeight {
+            self.currentMaxColumHeight = columnHeight
         }
         return CGRect(x: x, y: y, width: currentW, height: currentH)
     }
@@ -223,6 +224,7 @@ extension WaterfallFlowLayout {
         // mark final row
         if (viewW - (self.maxRowWidths.first ?? 0)) > viewW + self.sectionInset.right {
             x = self.maxRowWidths.first == self.sectionInset.left ?  self.sectionInset.left : ((self.maxRowWidths.first ?? 0) + self.columMargin)
+            // config y
             if (self.maxColumHeights.first ?? 0) == self.sectionInset.top {
                 y = self.sectionInset.top
             } else if (self.maxColumHeights.first ?? 0) == self.sectionInset.top + headerSize.height {
@@ -235,14 +237,6 @@ extension WaterfallFlowLayout {
             if self.maxColumHeights.first == self.sectionInset.top || self.maxColumHeights.first == self.sectionInset.top + headerSize.height {
                 self.maxColumHeights[0] = y + itemH
             }
-        } else if (viewW - (self.maxRowWidths.first ?? 0)) == (itemW + self.sectionInset.right) {
-            // change line
-            x = self.sectionInset.left
-            y = (self.maxColumHeights.first ?? 0) + self.rowMargin
-            
-            self.maxRowWidths[0] = x + itemW
-            self.maxColumHeights[0] = y + itemH
-
         } else {
             // change line
             x = self.sectionInset.left
@@ -251,63 +245,45 @@ extension WaterfallFlowLayout {
             self.maxColumHeights[0] = y + itemH
         }
         // mark height
-        self.latestColumHeight = self.maxColumHeights.first ?? 0
+        self.currentMaxColumHeight = self.maxColumHeights.first ?? 0
         return CGRect(x: x, y: y, width: itemW, height: itemH)
     }
     
-    // return header frame
-    fileprivate func headerViewFrameOfFlowLayout(_ indexPath:IndexPath) -> CGRect {
-        let size = self.layoutDataSource?.waterfallFlowLayout(self, sizeForHeaderViewInSection: indexPath.section)  ??  CGSize.zero
-        if self.layoutStyle == .styleOfEqualWidth {
-            let x: CGFloat = 0
-            var y: CGFloat = self.latestColumHeight == 0 ? self.sectionInset.top : self.latestColumHeight
+    /// update max number of colum and row with section
+    /// - Parameter indexPath: indexPath
+    /// - Parameter isHeader: section of header yes or no
+    fileprivate func obtainSupplementaryFrameWithHeaderOrFooter(_ indexPath: IndexPath, _ isHeader: Bool) -> CGRect {
+        var size = CGSize.zero
+        var y: CGFloat = 0
+        if  isHeader {
+            size = self.layoutDataSource?.waterfallFlowLayout(self, sizeForHeaderViewInSection: indexPath.section)  ??  CGSize.zero
             if self.layoutDataSource?.waterfallFlowLayout(self, sizeForFooterViewInSection: indexPath.section).height == 0 {
-                y = self.latestColumHeight == 0 ? self.sectionInset.top : self.latestColumHeight + self.rowMargin
+                y = self.currentMaxColumHeight == 0 ? self.sectionInset.top : self.currentMaxColumHeight + self.rowMargin
+            } else {
+                y = self.currentMaxColumHeight == 0 ? self.sectionInset.top : self.currentMaxColumHeight
             }
-            self.latestColumHeight = y + size.height
+            self.currentMaxColumHeight = y + size.height
+        } else {
+            size = self.layoutDataSource?.waterfallFlowLayout(self, sizeForFooterViewInSection: indexPath.section)  ??  CGSize.zero
+            y = size.height == 0 ? self.currentMaxColumHeight : self.currentMaxColumHeight + self.rowMargin
+            self.currentMaxColumHeight = y + size.height
+        }
+        
+        if self.layoutStyle == .styleOfEqualWidth {
             self.maxColumHeights.removeAll()
             for _ in 0..<self.columCount {
-                self.maxColumHeights.append(self.latestColumHeight)
+                self.maxColumHeights.append(self.currentMaxColumHeight)
             }
-            return CGRect(x: x, y: y, width: self.collectionView!.frame.size.width, height: size.height)
         } else if self.layoutStyle == .styleOfEqualHeight {
-            let x: CGFloat = 0
-            var y: CGFloat = self.latestColumHeight == 0 ? self.sectionInset.top : self.latestColumHeight
-            if self.layoutDataSource?.waterfallFlowLayout(self, sizeForFooterViewInSection: indexPath.section).height == 0 {
-                y = self.latestColumHeight == 0 ? self.sectionInset.top : self.latestColumHeight + self.rowMargin
-            }
-            self.latestColumHeight = y + size.height
-            self.maxRowWidths[0] = self.collectionView!.frame.size.width
-            
-            self.maxColumHeights[0] = self.latestColumHeight
-            
-            return CGRect(x: x, y: y, width: self.collectionView!.frame.size.width, height: size.height)
-        }
-        return CGRect.zero
-    }
-    
-    //return footer frame
-    fileprivate func footerViewFrameOfFlowLayout(_ indexPath:IndexPath) -> CGRect{
-        let size = self.layoutDataSource?.waterfallFlowLayout(self, sizeForFooterViewInSection: indexPath.section)  ??  CGSize.zero
-        if self.layoutStyle == .styleOfEqualWidth {
-            let x: CGFloat = 0
-            let y: CGFloat = size.height == 0 ? self.latestColumHeight : self.latestColumHeight + self.rowMargin
-            self.latestColumHeight = y + size.height
-            self.maxColumHeights.removeAll()
-            for _ in 0..<self.columCount {
-                self.maxColumHeights.append(self.latestColumHeight)
-            }
-            return CGRect(x: x, y: y, width: self.collectionView!.frame.size.width, height: size.height)
-        }else if self.layoutStyle == .styleOfEqualHeight {
-            let x: CGFloat = 0
-            let y: CGFloat = size.height == 0 ? self.latestColumHeight : self.latestColumHeight + self.rowMargin
-            self.latestColumHeight = y + size.height
             
             self.maxRowWidths[0] = self.collectionView!.frame.size.width
-            self.maxColumHeights[0] = self.latestColumHeight
-            return CGRect(x: x, y: y, width: self.collectionView!.frame.size.width, height: size.height)
+            self.maxColumHeights[0] = self.currentMaxColumHeight
+            
+        } else {
+            return CGRect.zero
         }
-        return CGRect.zero
+        return CGRect(x: 0, y: y, width: self.collectionView!.frame.size.width, height: size.height)
     }
 }
+
 
