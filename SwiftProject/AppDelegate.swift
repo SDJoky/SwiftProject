@@ -19,7 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = MyTabbarViewController()
         window?.backgroundColor = UIColor.white
         window?.makeKeyAndVisible()
-        
         return true
     }
 
