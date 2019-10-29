@@ -11,7 +11,7 @@ import Alamofire
 import SwiftyJSON
 import MJRefresh
 
-class Test1ViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UICollectionViewDelegate{
+class CollectionViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UICollectionViewDelegate{
     private var dataArr = [HomeNewsModel]()
     private var myCollectionView: UICollectionView!
     let pushAnim = SDPushAnimation()
@@ -21,8 +21,8 @@ class Test1ViewController: UIViewController,UICollectionViewDataSource,UICollect
     override func viewDidLoad() {
         super.viewDidLoad()
         flowLayout.itemSize = CGSize.init(width:(SCREENW-10 * 2) / 2.0, height: (SCREENW-10 * 2) / 2.0 + 50)
-        flowLayout.scrollDirection = UICollectionViewScrollDirection.vertical
-        flowLayout.sectionInset = UIEdgeInsetsMake(0, 5, 0, 5)
+        flowLayout.scrollDirection = UICollectionView.ScrollDirection.vertical
+        flowLayout.sectionInset = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
         myCollectionView = UICollectionView(frame: CGRect.init(x: 0, y: 5, width: view.frame.size.width, height: view.frame.height - 49 - 30), collectionViewLayout: flowLayout)
         myCollectionView.backgroundColor = UIColor.white
         myCollectionView.register(UINib.init(nibName:"CollectionViewCell" , bundle: Bundle.main), forCellWithReuseIdentifier: "CollectionViewCell")

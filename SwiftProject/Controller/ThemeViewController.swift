@@ -18,7 +18,7 @@ class ThemeViewController: UIViewController {
         super.viewDidLoad()
         self.setupUI()
         self.bindView()
-        title = "MVVM + RxSwift + HandyJSON"
+        title = "RxSwift"
     }
     
 }
