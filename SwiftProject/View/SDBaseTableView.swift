@@ -15,7 +15,7 @@ class SDBaseTableView: UITableView {
     typealias tableCellSelectBlock = (SDBaseTableView,NSIndexPath)
     typealias tableViewRefreshCallBack = (SDBaseTableView,Bool)
     
-    override init(frame: CGRect, style: UITableViewStyle) {
+    override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: style)
         if #available(iOS 110, *){
             self.contentInsetAdjustmentBehavior = .never
@@ -31,7 +31,7 @@ class SDBaseTableView: UITableView {
     }
     
     init() {
-        super.init(frame: CGRect.init(), style: UITableViewStyle.plain)
+        super.init(frame: CGRect.init(), style: UITableView.Style.plain)
     }
     
     required init?(coder aDecoder: NSCoder) {

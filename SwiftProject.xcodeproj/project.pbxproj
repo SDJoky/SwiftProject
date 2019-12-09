@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		153AFFCB236813850037472A /* CollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153AFFC9236813850037472A /* CollectionReusableView.swift */; };
+		153AFFCC236813850037472A /* FlowCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153AFFCA236813850037472A /* FlowCollectionViewCell.swift */; };
+		153AFFCF236813910037472A /* CustomWaterFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153AFFCD236813910037472A /* CustomWaterFlowLayout.swift */; };
+		153AFFD0236813910037472A /* FlowLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153AFFCE236813910037472A /* FlowLayoutViewController.swift */; };
 		378641219A237EEC20F5861D /* Pods_SwiftProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3CD2E3821B4BF3496B5D2B7 /* Pods_SwiftProject.framework */; };
 		4537D7FD22D3105200632DCB /* TableVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4537D7FC22D3105200632DCB /* TableVM.swift */; };
 		4537D80022D3108900632DCB /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4537D7FF22D3108900632DCB /* DataModel.swift */; };
@@ -26,13 +30,13 @@
 		45A0086622D5D2D3003A1F54 /* ThirdNetTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A0086522D5D2D3003A1F54 /* ThirdNetTool.swift */; };
 		45BDEBE0233B2B3B000EDFDE /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BDEBDE233B2B3B000EDFDE /* CollectionViewCell.swift */; };
 		45BDEBE1233B2B3B000EDFDE /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45BDEBDF233B2B3B000EDFDE /* CollectionViewCell.xib */; };
-		45C3C1FA214BAA6D00AC5A82 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C3C1F9214BAA6D00AC5A82 /* ThirdViewController.swift */; };
+		45C3C1FA214BAA6D00AC5A82 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C3C1F9214BAA6D00AC5A82 /* TableViewController.swift */; };
 		45C3C200214BB06100AC5A82 /* TestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C3C1FE214BB06100AC5A82 /* TestTableViewCell.swift */; };
 		45C3C201214BB06100AC5A82 /* TestTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45C3C1FF214BB06100AC5A82 /* TestTableViewCell.xib */; };
 		45FA2BFD2326186D00D281C3 /* BaseUrlRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FA2BFC2326186D00D281C3 /* BaseUrlRequest.swift */; };
 		CB1B344620BBD3960039FD9E /* MyTabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1B344520BBD3960039FD9E /* MyTabbarViewController.swift */; };
-		CB1B344820BBD5F70039FD9E /* Test1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1B344720BBD5F70039FD9E /* Test1ViewController.swift */; };
-		CB1B344A20BBDBF60039FD9E /* Test2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1B344920BBDBF60039FD9E /* Test2ViewController.swift */; };
+		CB1B344820BBD5F70039FD9E /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1B344720BBD5F70039FD9E /* CollectionViewController.swift */; };
+		CB1B344A20BBDBF60039FD9E /* DownLoadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1B344920BBDBF60039FD9E /* DownLoadViewController.swift */; };
 		CB1F4D41208F058400B7AC80 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1F4D40208F058400B7AC80 /* AppDelegate.swift */; };
 		CB1F4D46208F058400B7AC80 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB1F4D44208F058400B7AC80 /* Main.storyboard */; };
 		CB1F4D48208F058700B7AC80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB1F4D47208F058700B7AC80 /* Assets.xcassets */; };
@@ -61,6 +65,10 @@
 
 /* Begin PBXFileReference section */
 		10763A4A97AAE8CCC88C02AE /* Pods_SwiftProjectUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftProjectUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		153AFFC9236813850037472A /* CollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionReusableView.swift; sourceTree = "<group>"; };
+		153AFFCA236813850037472A /* FlowCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowCollectionViewCell.swift; sourceTree = "<group>"; };
+		153AFFCD236813910037472A /* CustomWaterFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomWaterFlowLayout.swift; sourceTree = "<group>"; };
+		153AFFCE236813910037472A /* FlowLayoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowLayoutViewController.swift; sourceTree = "<group>"; };
 		3F84D1437F2CB2427CB2F05F /* Pods-SwiftProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftProject/Pods-SwiftProject.release.xcconfig"; sourceTree = "<group>"; };
 		4537D7FC22D3105200632DCB /* TableVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableVM.swift; sourceTree = "<group>"; };
 		4537D7FF22D3108900632DCB /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
@@ -80,15 +88,15 @@
 		45A0086522D5D2D3003A1F54 /* ThirdNetTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdNetTool.swift; sourceTree = "<group>"; };
 		45BDEBDE233B2B3B000EDFDE /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		45BDEBDF233B2B3B000EDFDE /* CollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
-		45C3C1F9214BAA6D00AC5A82 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
+		45C3C1F9214BAA6D00AC5A82 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		45C3C1FE214BB06100AC5A82 /* TestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTableViewCell.swift; sourceTree = "<group>"; };
 		45C3C1FF214BB06100AC5A82 /* TestTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestTableViewCell.xib; sourceTree = "<group>"; };
 		45FA2BFC2326186D00D281C3 /* BaseUrlRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUrlRequest.swift; sourceTree = "<group>"; };
 		60F4D4A42C6E93A78897220E /* Pods_SwiftProjectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftProjectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5C2103A3291AD4479E12E6E /* Pods-SwiftProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftProject/Pods-SwiftProject.debug.xcconfig"; sourceTree = "<group>"; };
 		CB1B344520BBD3960039FD9E /* MyTabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTabbarViewController.swift; sourceTree = "<group>"; };
-		CB1B344720BBD5F70039FD9E /* Test1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test1ViewController.swift; sourceTree = "<group>"; };
-		CB1B344920BBDBF60039FD9E /* Test2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test2ViewController.swift; sourceTree = "<group>"; };
+		CB1B344720BBD5F70039FD9E /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		CB1B344920BBDBF60039FD9E /* DownLoadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownLoadViewController.swift; sourceTree = "<group>"; };
 		CB1F4D3D208F058400B7AC80 /* SwiftProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB1F4D40208F058400B7AC80 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB1F4D45208F058400B7AC80 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -132,6 +140,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		153AFFC82368136F0037472A /* FlowLayout */ = {
+			isa = PBXGroup;
+			children = (
+				153AFFC9236813850037472A /* CollectionReusableView.swift */,
+				153AFFCA236813850037472A /* FlowCollectionViewCell.swift */,
+				153AFFCD236813910037472A /* CustomWaterFlowLayout.swift */,
+				153AFFCE236813910037472A /* FlowLayoutViewController.swift */,
+			);
+			path = FlowLayout;
+			sourceTree = "<group>";
+		};
 		4537D7F922D3101F00632DCB /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -171,10 +190,11 @@
 		45C3C1FB214BABE900AC5A82 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				153AFFC82368136F0037472A /* FlowLayout */,
 				CB1B344520BBD3960039FD9E /* MyTabbarViewController.swift */,
-				45C3C1F9214BAA6D00AC5A82 /* ThirdViewController.swift */,
-				CB1B344720BBD5F70039FD9E /* Test1ViewController.swift */,
-				CB1B344920BBDBF60039FD9E /* Test2ViewController.swift */,
+				45C3C1F9214BAA6D00AC5A82 /* TableViewController.swift */,
+				CB1B344720BBD5F70039FD9E /* CollectionViewController.swift */,
+				CB1B344920BBDBF60039FD9E /* DownLoadViewController.swift */,
 				455E9775214A477900D59AB5 /* Test1DetailViewController.swift */,
 				45469EAE22F2A997000A94EA /* ThemeViewController.swift */,
 			);
@@ -497,12 +517,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				153AFFD0236813910037472A /* FlowLayoutViewController.swift in Sources */,
 				4537D80322D3120B00632DCB /* VMProtocol.swift in Sources */,
 				4539AE56214B8C8A005CC654 /* SDBaseTableView.swift in Sources */,
-				CB1B344820BBD5F70039FD9E /* Test1ViewController.swift in Sources */,
-				45C3C1FA214BAA6D00AC5A82 /* ThirdViewController.swift in Sources */,
+				CB1B344820BBD5F70039FD9E /* CollectionViewController.swift in Sources */,
+				153AFFCB236813850037472A /* CollectionReusableView.swift in Sources */,
+				45C3C1FA214BAA6D00AC5A82 /* TableViewController.swift in Sources */,
 				4537D7FD22D3105200632DCB /* TableVM.swift in Sources */,
-				CB1B344A20BBDBF60039FD9E /* Test2ViewController.swift in Sources */,
+				CB1B344A20BBDBF60039FD9E /* DownLoadViewController.swift in Sources */,
 				4537D80B22D322D300632DCB /* Response+ObjectMapper.swift in Sources */,
 				457E2598235EACF800141CAC /* ZHNewsModel.swift in Sources */,
 				458D31FD22DF135800122239 /* SDTestHeaderView.swift in Sources */,
@@ -516,7 +538,9 @@
 				CB1F4D41208F058400B7AC80 /* AppDelegate.swift in Sources */,
 				457E259C235ECE2600141CAC /* ThemeVM.swift in Sources */,
 				45469EAF22F2A997000A94EA /* ThemeViewController.swift in Sources */,
+				153AFFCC236813850037472A /* FlowCollectionViewCell.swift in Sources */,
 				45FA2BFD2326186D00D281C3 /* BaseUrlRequest.swift in Sources */,
+				153AFFCF236813910037472A /* CustomWaterFlowLayout.swift in Sources */,
 				455E9782214A4E1600D59AB5 /* SDPushAnimation.swift in Sources */,
 				458D31FF22DF166800122239 /* SDConst.swift in Sources */,
 				CBD5F28B20B3EB7C00DFD55D /* HomeNewsModel.swift in Sources */,
@@ -706,7 +730,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -726,7 +750,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = szy.SwiftProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

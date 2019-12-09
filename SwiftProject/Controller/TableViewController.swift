@@ -10,7 +10,7 @@ import UIKit
 import NSObject_Rx
 import Kingfisher
 
-class ThirdViewController: UIViewController {
+class TableViewController: UIViewController {
 
     private lazy var viewModel : TableVM = TableVM()
     private let tableView = UITableView()
@@ -46,7 +46,7 @@ class ThirdViewController: UIViewController {
     }
 }
 
-extension ThirdViewController {
+extension TableViewController {
     fileprivate func setupUI() {
         view.addSubview(tableView)
         tableView.register(UINib(nibName: "TestTableViewCell", bundle: nil), forCellReuseIdentifier: "TestTableViewCell")
@@ -94,10 +94,10 @@ extension ThirdViewController {
     
 }
 
-extension ThirdViewController: UITableViewDelegate {
+extension TableViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let detailVC = ThemeViewController()
+        let detailVC = TableViewController()
         detailVC.hidesBottomBarWhenPushed = true;
         navigationController?.pushViewController(detailVC, animated: true)
     }

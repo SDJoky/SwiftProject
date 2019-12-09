@@ -16,14 +16,15 @@ class MyTabbarViewController: UITabBarController {
         addChildViewControllers()
         let navigationBar = UINavigationBar.appearance()
         navigationBar.setBackgroundImage(UIImage(named: "navigation_background"), for: .default)
-        navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+        navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         navigationBar.tintColor = UIColor.white
     }
     
     private func addChildViewControllers() {
-        setChildViewController(ThirdViewController(), title: "Table", imageName: "live_nor",selectName: "zhibo_hi")
-        setChildViewController(Test1ViewController(), title: "Collection", imageName: "shouye_nor",selectName: "shouye_hi")
-        setChildViewController(Test2ViewController(), title: "Test2", imageName: "wangke_nor",selectName: "kecheng_hi")
+        setChildViewController(ThemeViewController(), title: "Theme", imageName: "wangke_nor",selectName: "zhibo_hi")
+        setChildViewController(CollectionViewController(), title: "Collection", imageName: "shouye_nor",selectName: "shouye_hi")
+        setChildViewController(DownLoadViewController(), title: "Test2", imageName: "wangke_nor",selectName: "kecheng_hi")
+        setChildViewController(FlowLayoutViewController(), title: "瀑布流", imageName: "shouye_nor",selectName: "kecheng_hi")
     }
     
     private func setChildViewController(_ childVC:UIViewController ,title:String ,imageName:String ,selectName:String) {
@@ -31,7 +32,7 @@ class MyTabbarViewController: UITabBarController {
         childVC.tabBarItem.image = UIImage (named: imageName)?.withRenderingMode(.alwaysOriginal)
         childVC.tabBarItem.selectedImage = UIImage (named: selectName)?.withRenderingMode(.alwaysOriginal)
         let navBar : UINavigationController = UINavigationController(rootViewController: childVC)
-        addChildViewController(navBar)
+        addChild(navBar)
     }
 
     override func didReceiveMemoryWarning() {

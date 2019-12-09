@@ -10,7 +10,7 @@ import UIKit
 import Tiercel
 import Kingfisher
 
-class Test2ViewController: UIViewController {
+class DownLoadViewController: UIViewController {
     
     //Tiercel 下载器使用
     private lazy var downloadManager = TRManager()
