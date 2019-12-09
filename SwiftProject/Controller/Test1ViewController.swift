@@ -20,6 +20,7 @@ class Test1ViewController: UIViewController,UICollectionViewDataSource,UICollect
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("test1 did load")
         flowLayout.itemSize = CGSize.init(width:(SCREENW-10 * 2) / 2.0, height: (SCREENW-10 * 2) / 2.0 + 50)
         flowLayout.scrollDirection = UICollectionViewScrollDirection.vertical
         flowLayout.sectionInset = UIEdgeInsetsMake(0, 5, 0, 5)
@@ -37,6 +38,32 @@ class Test1ViewController: UIViewController,UICollectionViewDataSource,UICollect
         header?.isAutomaticallyChangeAlpha = true
         myCollectionView.mj_header = header
         myCollectionView.mj_header .beginRefreshing()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("test1---will appear")
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print("test1---did appear")
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("test1---will disappear")
+
+
+    }
+
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        print("test1---did Disappear")
+    }
+
+    deinit {
+        print("test1--deinit")
     }
 
     private func loadRequest() {
@@ -82,7 +109,7 @@ class Test1ViewController: UIViewController,UICollectionViewDataSource,UICollect
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let detailVC = Test1DetailViewController()
+        let detailVC = Test1DetailViewController("_")
         navigationController?.delegate = pushAnim;
         detailVC.hidesBottomBarWhenPushed = true;//加上这句就可以隐藏推出的ViewController的Tabbar
         navigationController?.pushViewController(detailVC, animated: true)

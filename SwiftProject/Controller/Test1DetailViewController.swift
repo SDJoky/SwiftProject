@@ -9,8 +9,14 @@
 import UIKit
 
 class Test1DetailViewController: UIViewController {
-   
+
+    convenience init(_ no: String) {
+        self.init()
+        print("test1 detail init")
+    }
+
     override func viewDidLoad() {
+        print("test1 detail-- did load")
         super.viewDidLoad()
         view.backgroundColor = .yellow
         let btn : UIButton = creatBtn(title: "点击diss", titleColor: UIColor.red, backGroundColor: UIColor.yellow)
@@ -22,6 +28,32 @@ class Test1DetailViewController: UIViewController {
             make.width.equalTo(100)
             make.height.equalTo(30)
         }
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("test1 detail---will appear")
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print("test1 detail---did appear")
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("test1 detail---will disappear")
+
+
+    }
+
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        print("test1 detail---did Disappear")
+    }
+
+    deinit {
+        print("test1 detail--deinit")
     }
 
     func creatBtn(title:String,titleColor:UIColor,backGroundColor:UIColor) -> UIButton {
