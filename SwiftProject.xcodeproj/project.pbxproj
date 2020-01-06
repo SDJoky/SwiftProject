@@ -31,6 +31,9 @@
 		459EB1B523C2DF8900B9BE3E /* UIColor+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459EB1B323C2DF8900B9BE3E /* UIColor+Ex.swift */; };
 		459EB1B823C2DFDB00B9BE3E /* UITextView+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459EB1B623C2DFDB00B9BE3E /* UITextView+Ex.swift */; };
 		459EB1B923C2DFDB00B9BE3E /* UILabel+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459EB1B723C2DFDB00B9BE3E /* UILabel+Ex.swift */; };
+		459EB1BD23C2E0B300B9BE3E /* UITextField+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459EB1BA23C2E0B300B9BE3E /* UITextField+Rx.swift */; };
+		459EB1BE23C2E0B300B9BE3E /* MoyaProvider+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459EB1BB23C2E0B300B9BE3E /* MoyaProvider+Rx.swift */; };
+		459EB1BF23C2E0B300B9BE3E /* UILabel+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459EB1BC23C2E0B300B9BE3E /* UILabel+Rx.swift */; };
 		45A0086622D5D2D3003A1F54 /* ThirdNetTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A0086522D5D2D3003A1F54 /* ThirdNetTool.swift */; };
 		45BDEBE0233B2B3B000EDFDE /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BDEBDE233B2B3B000EDFDE /* CollectionViewCell.swift */; };
 		45BDEBE1233B2B3B000EDFDE /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45BDEBDF233B2B3B000EDFDE /* CollectionViewCell.xib */; };
@@ -93,6 +96,9 @@
 		459EB1B323C2DF8900B9BE3E /* UIColor+Ex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Ex.swift"; sourceTree = "<group>"; };
 		459EB1B623C2DFDB00B9BE3E /* UITextView+Ex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextView+Ex.swift"; sourceTree = "<group>"; };
 		459EB1B723C2DFDB00B9BE3E /* UILabel+Ex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Ex.swift"; sourceTree = "<group>"; };
+		459EB1BA23C2E0B300B9BE3E /* UITextField+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+Rx.swift"; sourceTree = "<group>"; };
+		459EB1BB23C2E0B300B9BE3E /* MoyaProvider+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MoyaProvider+Rx.swift"; sourceTree = "<group>"; };
+		459EB1BC23C2E0B300B9BE3E /* UILabel+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Rx.swift"; sourceTree = "<group>"; };
 		45A0086522D5D2D3003A1F54 /* ThirdNetTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdNetTool.swift; sourceTree = "<group>"; };
 		45BDEBDE233B2B3B000EDFDE /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		45BDEBDF233B2B3B000EDFDE /* CollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
@@ -190,6 +196,9 @@
 		4537D80922D322D300632DCB /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				459EB1BB23C2E0B300B9BE3E /* MoyaProvider+Rx.swift */,
+				459EB1BC23C2E0B300B9BE3E /* UILabel+Rx.swift */,
+				459EB1BA23C2E0B300B9BE3E /* UITextField+Rx.swift */,
 				459EB1B723C2DFDB00B9BE3E /* UILabel+Ex.swift */,
 				459EB1B623C2DFDB00B9BE3E /* UITextView+Ex.swift */,
 				459EB1B323C2DF8900B9BE3E /* UIColor+Ex.swift */,
@@ -534,6 +543,7 @@
 				4539AE56214B8C8A005CC654 /* SDBaseTableView.swift in Sources */,
 				CB1B344820BBD5F70039FD9E /* CollectionViewController.swift in Sources */,
 				153AFFCB236813850037472A /* CollectionReusableView.swift in Sources */,
+				459EB1BD23C2E0B300B9BE3E /* UITextField+Rx.swift in Sources */,
 				45C3C1FA214BAA6D00AC5A82 /* TableViewController.swift in Sources */,
 				4537D7FD22D3105200632DCB /* TableVM.swift in Sources */,
 				CB1B344A20BBDBF60039FD9E /* DownLoadViewController.swift in Sources */,
@@ -546,6 +556,7 @@
 				45A0086622D5D2D3003A1F54 /* ThirdNetTool.swift in Sources */,
 				457E258C235E97F900141CAC /* ApiManager.swift in Sources */,
 				45BDEBE0233B2B3B000EDFDE /* CollectionViewCell.swift in Sources */,
+				459EB1BF23C2E0B300B9BE3E /* UILabel+Rx.swift in Sources */,
 				4537D80022D3108900632DCB /* DataModel.swift in Sources */,
 				457E2596235EA55E00141CAC /* JsonToModel.swift in Sources */,
 				457E25A0235EF15200141CAC /* RxExtension.swift in Sources */,
@@ -561,6 +572,7 @@
 				CBD5F28B20B3EB7C00DFD55D /* HomeNewsModel.swift in Sources */,
 				455E9776214A477900D59AB5 /* Test1DetailViewController.swift in Sources */,
 				45C3C200214BB06100AC5A82 /* TestTableViewCell.swift in Sources */,
+				459EB1BE23C2E0B300B9BE3E /* MoyaProvider+Rx.swift in Sources */,
 				459EB1B423C2DF8900B9BE3E /* UIView+Ex.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
