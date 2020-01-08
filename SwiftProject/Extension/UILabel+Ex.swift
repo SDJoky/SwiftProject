@@ -1,6 +1,6 @@
 //
 //  UILabel+Ex.swift
-//  DoNewSeas
+//  SwiftProject
 //
 //  Created by Joky_Lee on 2020/1/6.
 //  Copyright © 2019 Joky_Lee. All rights reserved.
