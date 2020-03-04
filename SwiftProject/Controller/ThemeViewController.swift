@@ -61,7 +61,7 @@ extension ThemeViewController {
                 }
 
                 if ip.row == 0,ip.section == 0 {
-                    cell.testLable.text = self!.doubleClick ? self?.testStr : "1"
+                    cell.testLable.text = self!.doubleClick ? self?.testStr : "101010101010101010101"
                 } else {
                     cell.testLable.text = ""
                 }
@@ -118,7 +118,7 @@ extension ThemeViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 0,indexPath.section == 0 {
-            return doubleClick ? 150 + 10 + getTextHeightWithText(content: testStr): 150 + 10 + getTextHeightWithText(content: "1")
+            return doubleClick ? 150 + 10 + getTextHeightWithText(content: testStr): 150 + 10 + getTextHeightWithText(content: "101010101010101010101")
         } else {
             return 150
         }
