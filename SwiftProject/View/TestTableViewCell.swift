@@ -10,9 +10,11 @@ import UIKit
 
 class TestTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var testLable: UILabel!
     @IBOutlet weak var nameLbl: UILabel!
     @IBOutlet weak var photoImgV: UIImageView!
     @IBOutlet weak var desLbl: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
